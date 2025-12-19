@@ -1,620 +1,27 @@
-// // // // // import 'package:flutter/material.dart';
-// // // // // import '../widgets/uwo_navbar.dart';
-// // // // // import '../widgets/uwo_footer.dart';
-// // // // // import '../widgets/uwo_section.dart';
-// // // // // import '../theme/app_theme.dart';
-// // // // //
-// // // // // class AboutPage extends StatelessWidget {
-// // // // //   const AboutPage({super.key});
-// // // // //
-// // // // //   @override
-// // // // //   Widget build(BuildContext context) {
-// // // // //     return Scaffold(
-// // // // //       appBar:UWONavbar(),
-// // // // //       body: SingleChildScrollView(
-// // // // //         child: Column(
-// // // // //           children: [
-// // // // //             UWOSection(
-// // // // //               title: 'Who We Are',
-// // // // //               background: AppTheme.sectionBlue,
-// // // // //               content: Text(
-// // // // //                 'UWO is an AI-first technology company building scalable intelligent platforms.',
-// // // // //                 style: Theme.of(context).textTheme.bodyLarge,
-// // // // //               ),
-// // // // //             ),
-// // // // //             UWOSection(
-// // // // //               title: 'Vision & Mission',
-// // // // //               background: AppTheme.background,
-// // // // //               isGolden: true,
-// // // // //               content: Column(
-// // // // //                 crossAxisAlignment: CrossAxisAlignment.start,
-// // // // //                 children: const [
-// // // // //                   Text('Vision: A globally trusted intelligent technology company.'),
-// // // // //                   SizedBox(height: 8),
-// // // // //                   Text('Mission: Ethical, human-centric AI frameworks.'),
-// // // // //                 ],
-// // // // //               ),
-// // // // //             ),
-// // // // //             UWOSection(
-// // // // //               title: 'Our Values',
-// // // // //               background: AppTheme.softBlue,
-// // // // //               content: Column(
-// // // // //                 crossAxisAlignment: CrossAxisAlignment.start,
-// // // // //                 children: const [
-// // // // //                   Text('• Innovation With Responsibility'),
-// // // // //                   Text('• Research-Led Development'),
-// // // // //                   Text('• Transparency & Trust'),
-// // // // //                 ],
-// // // // //               ),
-// // // // //             ),
-// // // // //             const UWOFooter(),
-// // // // //           ],
-// // // // //         ),
-// // // // //       ),
-// // // // //     );
-// // // // //   }
-// // // // // }
-// // // // import 'package:flutter/material.dart';
-// // // // import '../widgets/uwo_navbar.dart';
-// // // // import '../widgets/uwo_footer.dart';
-// // // // import '../theme/app_theme.dart';
-// // // //
-// // // // class AboutPage extends StatelessWidget {
-// // // //   const AboutPage({super.key});
-// // // //
-// // // //   @override
-// // // //   Widget build(BuildContext context) {
-// // // //     return Scaffold(
-// // // //       appBar: UWONavbar(),
-// // // //       endDrawer: const Drawer(),
-// // // //       body: SingleChildScrollView(
-// // // //         child: Column(
-// // // //           crossAxisAlignment: CrossAxisAlignment.start,
-// // // //           children: const [
-// // // //             _WhoWeAreSection(),
-// // // //             _VisionMissionSection(),
-// // // //             _ValuesSection(),
-// // // //             UWOFooter(),
-// // // //           ],
-// // // //         ),
-// // // //       ),
-// // // //     );
-// // // //   }
-// // // // }
-// // // //
-// // // // /* =========================================================
-// // // //    1️⃣ WHO WE ARE
-// // // // ========================================================= */
-// // // // class _WhoWeAreSection extends StatelessWidget {
-// // // //   const _WhoWeAreSection();
-// // // //
-// // // //   @override
-// // // //   Widget build(BuildContext context) {
-// // // //     return Container(
-// // // //       width: double.infinity,
-// // // //       padding: const EdgeInsets.symmetric(vertical: 100, horizontal: 80),
-// // // //       color: Color(0xFFEFF6FA),
-// // // //       child: Column(
-// // // //         crossAxisAlignment: CrossAxisAlignment.start,
-// // // //         children: const [
-// // // //           Text(
-// // // //             'Who We Are',
-// // // //             style: TextStyle(
-// // // //               fontSize: 36,
-// // // //               fontWeight: FontWeight.bold,
-// // // //             ),
-// // // //           ),
-// // // //           SizedBox(height: 24),
-// // // //           SizedBox(
-// // // //             width: 900,
-// // // //             child: Text(
-// // // //               'UWO is an AI-first technology organization dedicated to building scalable, intelligent platforms. '
-// // // //                   'We operate at the intersection of advanced engineering, applied intelligence, and real-world problem solving. '
-// // // //                   'Our focus is on creating systems that are not only technically robust but also future-ready and responsible.',
-// // // //               style: TextStyle(
-// // // //                 fontSize: 18,
-// // // //                 color: AppTheme.textMuted,
-// // // //               ),
-// // // //             ),
-// // // //           ),
-// // // //         ],
-// // // //       ),
-// // // //     );
-// // // //   }
-// // // // }
-// // // //
-// // // // /* =========================================================
-// // // //    2️⃣ VISION & MISSION
-// // // // ========================================================= */
-// // // // class _VisionMissionSection extends StatelessWidget {
-// // // //   const _VisionMissionSection();
-// // // //
-// // // //   @override
-// // // //   Widget build(BuildContext context) {
-// // // //     return Container(
-// // // //       width: double.infinity,
-// // // //       padding: const EdgeInsets.symmetric(vertical: 100, horizontal: 80),
-// // // //       decoration: const BoxDecoration(
-// // // //         gradient: LinearGradient(
-// // // //           colors: [
-// // // //             Color(0xFFF4F6F8),
-// // // //             Color(0xFFF1E6D6),
-// // // //           ],
-// // // //         ),
-// // // //       ),
-// // // //       child: Column(
-// // // //         crossAxisAlignment: CrossAxisAlignment.start,
-// // // //         children: const [
-// // // //           Text(
-// // // //             'Vision & Mission',
-// // // //             style: TextStyle(
-// // // //               fontSize: 36,
-// // // //               fontWeight: FontWeight.bold,
-// // // //             ),
-// // // //           ),
-// // // //           SizedBox(height: 32),
-// // // //
-// // // //           // Vision
-// // // //           Text(
-// // // //             'Vision',
-// // // //             style: TextStyle(
-// // // //               fontSize: 22,
-// // // //               fontWeight: FontWeight.w600,
-// // // //             ),
-// // // //           ),
-// // // //           SizedBox(height: 12),
-// // // //           SizedBox(
-// // // //             width: 800,
-// // // //             child: Text(
-// // // //               'To become a globally trusted intelligent technology organization that designs systems capable of '
-// // // //                   'driving meaningful transformation across industries and societies.',
-// // // //               style: TextStyle(
-// // // //                 fontSize: 16,
-// // // //                 color: AppTheme.textMuted,
-// // // //               ),
-// // // //             ),
-// // // //           ),
-// // // //
-// // // //           SizedBox(height: 32),
-// // // //
-// // // //           // Mission
-// // // //           Text(
-// // // //             'Mission',
-// // // //             style: TextStyle(
-// // // //               fontSize: 22,
-// // // //               fontWeight: FontWeight.w600,
-// // // //             ),
-// // // //           ),
-// // // //           SizedBox(height: 12),
-// // // //           SizedBox(
-// // // //             width: 800,
-// // // //             child: Text(
-// // // //               'To build ethical, human-centric, and scalable AI-driven platforms by combining research, engineering '
-// // // //                   'excellence, and long-term technological vision.',
-// // // //               style: TextStyle(
-// // // //                 fontSize: 16,
-// // // //                 color: AppTheme.textMuted,
-// // // //               ),
-// // // //             ),
-// // // //           ),
-// // // //         ],
-// // // //       ),
-// // // //     );
-// // // //   }
-// // // // }
-// // // //
-// // // // /* =========================================================
-// // // //    3️⃣ OUR VALUES
-// // // // ========================================================= */
-// // // // class _ValuesSection extends StatelessWidget {
-// // // //   const _ValuesSection();
-// // // //
-// // // //   @override
-// // // //   Widget build(BuildContext context) {
-// // // //     return Container(
-// // // //       width: double.infinity,
-// // // //       padding: const EdgeInsets.symmetric(vertical: 100, horizontal: 80),
-// // // //       color: Color(0xFFEFF6FA),
-// // // //       child: Column(
-// // // //         crossAxisAlignment: CrossAxisAlignment.start,
-// // // //         children: const [
-// // // //           Text(
-// // // //             'Our Values',
-// // // //             style: TextStyle(
-// // // //               fontSize: 36,
-// // // //               fontWeight: FontWeight.bold,
-// // // //             ),
-// // // //           ),
-// // // //           SizedBox(height: 32),
-// // // //
-// // // //           SizedBox(
-// // // //             width: 900,
-// // // //             child: Text(
-// // // //               '• Innovation With Responsibility\n\n'
-// // // //                   '• Engineering Excellence\n\n'
-// // // //                   '• Research-Driven Development\n\n'
-// // // //                   '• Ethical & Human-Centric AI\n\n'
-// // // //                   '• Long-Term Vision Over Short-Term Gains',
-// // // //               style: TextStyle(
-// // // //                 fontSize: 18,
-// // // //                 height: 1.6,
-// // // //                 color: AppTheme.textMuted,
-// // // //               ),
-// // // //             ),
-// // // //           ),
-// // // //         ],
-// // // //       ),
-// // // //     );
-// // // //   }
-// // // // }
-// // // import 'package:flutter/material.dart';
-// // // import '../widgets/uwo_navbar.dart';
-// // // import '../widgets/uwo_footer.dart';
-// // // import '../theme/app_theme.dart';
-// // //
-// // // class HomePage extends StatelessWidget {
-// // //   const HomePage({super.key});
-// // //
-// // //   @override
-// // //   Widget build(BuildContext context) {
-// // //     return Scaffold(
-// // //       appBar: const UWONavbar(),
-// // //       body: SingleChildScrollView(
-// // //         child: Column(
-// // //           children: const [
-// // //             _HeroSection(),
-// // //             _TechnologySection(),
-// // //             _GlobalSection(),
-// // //             UWOFooter(),
-// // //           ],
-// // //         ),
-// // //       ),
-// // //     );
-// // //   }
-// // // }
-// // //
-// // // /* ================= HERO ================= */
-// // //
-// // // class _HeroSection extends StatelessWidget {
-// // //   const _HeroSection();
-// // //
-// // //   @override
-// // //   Widget build(BuildContext context) {
-// // //     return Container(
-// // //       width: double.infinity,
-// // //       padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 100),
-// // //       decoration: const BoxDecoration(
-// // //         gradient: LinearGradient(
-// // //           colors: [Color(0xFFF4F6F8), Color(0xFFF1E6D6)],
-// // //         ),
-// // //       ),
-// // //       child: Row(
-// // //         children: [
-// // //           Expanded(
-// // //             flex: 6,
-// // //             child: Column(
-// // //               crossAxisAlignment: CrossAxisAlignment.start,
-// // //               children: const [
-// // //                 Text(
-// // //                   'Building Intelligent\nDigital Platforms',
-// // //                   style: TextStyle(
-// // //                     fontSize: 44,
-// // //                     fontWeight: FontWeight.bold,
-// // //                     height: 1.2,
-// // //                   ),
-// // //                 ),
-// // //                 SizedBox(height: 24),
-// // //                 SizedBox(
-// // //                   width: 520,
-// // //                   child: Text(
-// // //                     'UWO is an AI-first technology organization focused on designing scalable, intelligent platforms that enable future-ready digital ecosystems.',
-// // //                     style: TextStyle(
-// // //                       fontSize: 18,
-// // //                       height: 1.6,
-// // //                       color: AppTheme.textMuted,
-// // //                     ),
-// // //                   ),
-// // //                 ),
-// // //               ],
-// // //             ),
-// // //           ),
-// // //           const SizedBox(width: 48),
-// // //           Expanded(
-// // //             flex: 5,
-// // //             child: Image.asset(
-// // //               'assets/images/home_hero.png',
-// // //               fit: BoxFit.contain,
-// // //             ),
-// // //           ),
-// // //         ],
-// // //       ),
-// // //     );
-// // //   }
-// // // }
-// // //
-// // // /* ================= TECHNOLOGY ================= */
-// // //
-// // // class _TechnologySection extends StatelessWidget {
-// // //   const _TechnologySection();
-// // //
-// // //   @override
-// // //   Widget build(BuildContext context) {
-// // //     return Container(
-// // //       width: double.infinity,
-// // //       padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 90),
-// // //       color: const Color(0xFFF8FAFC),
-// // //       child: Column(
-// // //         crossAxisAlignment: CrossAxisAlignment.start,
-// // //         children: const [
-// // //           Text(
-// // //             'Technology That Scales With Intelligence',
-// // //             style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
-// // //           ),
-// // //           SizedBox(height: 24),
-// // //           Text(
-// // //             '• AI Platform & Ecosystem\n'
-// // //                 '• Enterprise Digital Solutions\n'
-// // //                 '• Research-Driven Incubation',
-// // //             style: TextStyle(fontSize: 18, height: 1.8),
-// // //           ),
-// // //         ],
-// // //       ),
-// // //     );
-// // //   }
-// // // }
-// // //
-// // // /* ================= GLOBAL ================= */
-// // //
-// // // class _GlobalSection extends StatelessWidget {
-// // //   const _GlobalSection();
-// // //
-// // //   @override
-// // //   Widget build(BuildContext context) {
-// // //     return Container(
-// // //       width: double.infinity,
-// // //       padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 90),
-// // //       color: const Color(0xFFEFF6FA),
-// // //       child: Column(
-// // //         crossAxisAlignment: CrossAxisAlignment.start,
-// // //         children: const [
-// // //           Text(
-// // //             'Built For Global Scale',
-// // //             style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
-// // //           ),
-// // //           SizedBox(height: 24),
-// // //           SizedBox(
-// // //             width: 800,
-// // //             child: Text(
-// // //               'Our platforms are designed with a global-first mindset — scalable, secure, and adaptable across regions and industries.',
-// // //               style: TextStyle(
-// // //                 fontSize: 18,
-// // //                 height: 1.6,
-// // //                 color: AppTheme.textMuted,
-// // //               ),
-// // //             ),
-// // //           ),
-// // //         ],
-// // //       ),
-// // //     );
-// // //   }
-// // // }
-// // //
-// // import 'package:flutter/material.dart';
-// // import '../widgets/uwo_navbar.dart';
-// // import '../widgets/uwo_footer.dart';
-// // import '../theme/app_theme.dart';
-// //
-// // class AboutPage extends StatelessWidget {
-// //   const AboutPage({super.key});
-// //
-// //   @override
-// //   Widget build(BuildContext context) {
-// //     return Scaffold(
-// //       appBar: const UWONavbar(),
-// //       body: SingleChildScrollView(
-// //         child: Column(
-// //           children: const [
-// //             _IntroSection(),
-// //             _WhoWeAreSection(),
-// //             _VisionMissionSection(),
-// //             _ValuesSection(),
-// //             UWOFooter(),
-// //           ],
-// //         ),
-// //       ),
-// //     );
-// //   }
-// // }
-// //
-// // /* ================= INTRO ================= */
-// //
-// // class _IntroSection extends StatelessWidget {
-// //   const _IntroSection();
-// //
-// //   @override
-// //   Widget build(BuildContext context) {
-// //     return Container(
-// //       width: double.infinity,
-// //       padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 100),
-// //       decoration: const BoxDecoration(
-// //         gradient: LinearGradient(
-// //           colors: [
-// //             Color(0xFFF4F6F8),
-// //             Color(0xFFF1E6D6),
-// //           ],
-// //         ),
-// //       ),
-// //       child: const Column(
-// //         crossAxisAlignment: CrossAxisAlignment.start,
-// //         children: [
-// //           Text(
-// //             'About UWO',
-// //             style: TextStyle(
-// //               fontSize: 38,
-// //               fontWeight: FontWeight.bold,
-// //             ),
-// //           ),
-// //           SizedBox(height: 20),
-// //           SizedBox(
-// //             width: 900,
-// //             child: Text(
-// //               'Unified Web Options & Services (UWO) is a technology-driven '
-// //                   'organization focused on building intelligent digital platforms '
-// //                   'that scale globally and adapt to real-world complexity.',
-// //               style: TextStyle(
-// //                 fontSize: 18,
-// //                 height: 1.6,
-// //                 color: AppTheme.textMuted,
-// //               ),
-// //             ),
-// //           ),
-// //         ],
-// //       ),
-// //     );
-// //   }
-// // }
-// //
-// // /* ================= WHO WE ARE ================= */
-// //
-// // class _WhoWeAreSection extends StatelessWidget {
-// //   const _WhoWeAreSection();
-// //
-// //   @override
-// //   Widget build(BuildContext context) {
-// //     return Container(
-// //       width: double.infinity,
-// //       padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 90),
-// //       color: Colors.white,
-// //       child: const Column(
-// //         crossAxisAlignment: CrossAxisAlignment.start,
-// //         children: [
-// //           Text(
-// //             'Who We Are',
-// //             style: TextStyle(
-// //               fontSize: 32,
-// //               fontWeight: FontWeight.bold,
-// //             ),
-// //           ),
-// //           SizedBox(height: 24),
-// //           SizedBox(
-// //             width: 900,
-// //             child: Text(
-// //               'UWO operates at the intersection of engineering, research, and '
-// //                   'applied intelligence. We design platforms that enable intelligent '
-// //                   'automation, scalable systems, and future-ready digital ecosystems.',
-// //               style: TextStyle(
-// //                 fontSize: 18,
-// //                 height: 1.6,
-// //                 color: AppTheme.textMuted,
-// //               ),
-// //             ),
-// //           ),
-// //         ],
-// //       ),
-// //     );
-// //   }
-// // }
-// //
-// // /* ================= VISION & MISSION ================= */
-// //
-// // class _VisionMissionSection extends StatelessWidget {
-// //   const _VisionMissionSection();
-// //
-// //   @override
-// //   Widget build(BuildContext context) {
-// //     return Container(
-// //       width: double.infinity,
-// //       padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 90),
-// //       color: const Color(0xFFEFF6FA),
-// //       child: const Column(
-// //         crossAxisAlignment: CrossAxisAlignment.start,
-// //         children: [
-// //           Text(
-// //             'Vision & Mission',
-// //             style: TextStyle(
-// //               fontSize: 32,
-// //               fontWeight: FontWeight.bold,
-// //             ),
-// //           ),
-// //           SizedBox(height: 24),
-// //           SizedBox(
-// //             width: 900,
-// //             child: Text(
-// //               'Our vision is to become a globally trusted technology partner '
-// //                   'for intelligent digital systems.\n\n'
-// //                   'Our mission is to build ethical, scalable, and human-centric '
-// //                   'platforms that solve complex challenges through innovation '
-// //                   'and engineering excellence.',
-// //               style: TextStyle(
-// //                 fontSize: 18,
-// //                 height: 1.6,
-// //                 color: AppTheme.textMuted,
-// //               ),
-// //             ),
-// //           ),
-// //         ],
-// //       ),
-// //     );
-// //   }
-// // }
-// //
-// // /* ================= VALUES ================= */
-// //
-// // class _ValuesSection extends StatelessWidget {
-// //   const _ValuesSection();
-// //
-// //   @override
-// //   Widget build(BuildContext context) {
-// //     return Container(
-// //       width: double.infinity,
-// //       padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 90),
-// //       color: Colors.white,
-// //       child: const Column(
-// //         crossAxisAlignment: CrossAxisAlignment.start,
-// //         children: [
-// //           Text(
-// //             'Our Values',
-// //             style: TextStyle(
-// //               fontSize: 32,
-// //               fontWeight: FontWeight.bold,
-// //             ),
-// //           ),
-// //           SizedBox(height: 24),
-// //           Text(
-// //             '• Engineering excellence\n'
-// //                 '• Responsible innovation\n'
-// //                 '• Long-term thinking\n'
-// //                 '• Human-centric intelligence\n'
-// //                 '• Transparency and trust',
-// //             style: TextStyle(
-// //               fontSize: 18,
-// //               height: 1.8,
-// //             ),
-// //           ),
-// //         ],
-// //       ),
-// //     );
-// //   }
-// // }
-// //
 // import 'package:flutter/material.dart';
 // import '../widgets/uwo_navbar.dart';
 // import '../widgets/uwo_footer.dart';
 // import '../theme/app_theme.dart';
+// import '../widgets/mobile_drawer.dart';
 //
-// class HomePage extends StatelessWidget {
-//   const HomePage({super.key});
+// class AboutPage extends StatelessWidget {
+//   const AboutPage({super.key});
 //
 //   @override
 //   Widget build(BuildContext context) {
 //     return Scaffold(
-//       appBar: const UWONavbar(),
+//       appBar: UWONavbar(),
+//       endDrawer: MediaQuery.of(context).size.width < 768
+//           ? UWOMobileDrawer()
+//           : null,
 //       body: SingleChildScrollView(
 //         child: Column(
 //           children: const [
-//             _HeroSection(),
-//             _TechnologySection(),
-//             _GlobalSection(),
+//             _IntroSection(),
+//             _CompanyOverviewSection(),
+//             _VisionMissionSection(),
+//             _ApproachSection(),
+//             _ValuesSection(),
 //             UWOFooter(),
 //           ],
 //         ),
@@ -623,16 +30,16 @@
 //   }
 // }
 //
-// /* ================= HERO ================= */
+// /* ================= INTRO ================= */
 //
-// class _HeroSection extends StatelessWidget {
-//   const _HeroSection();
+// class _IntroSection extends StatelessWidget {
+//   const _IntroSection();
 //
 //   @override
 //   Widget build(BuildContext context) {
 //     return Container(
 //       width: double.infinity,
-//       padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 110),
+//       padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 120),
 //       decoration: const BoxDecoration(
 //         gradient: LinearGradient(
 //           colors: [
@@ -642,26 +49,29 @@
 //         ),
 //       ),
 //       child: Column(
-//         crossAxisAlignment: CrossAxisAlignment.start,
+//         crossAxisAlignment: CrossAxisAlignment.center,
 //         children: const [
 //           Text(
-//             'Building Intelligent\nDigital Platforms',
+//             'About UWO',
+//             textAlign: TextAlign.center,
 //             style: TextStyle(
-//               fontSize: 44,
+//               fontSize: 42,
 //               fontWeight: FontWeight.bold,
-//               height: 1.2,
+//               letterSpacing: 0.5,
 //             ),
 //           ),
-//           SizedBox(height: 28),
+//           SizedBox(height: 32),
 //           SizedBox(
-//             width: 700,
+//             width: 900,
 //             child: Text(
-//               'UWO is an AI-first technology organization focused on designing '
-//                   'scalable, intelligent platforms that enable future-ready '
-//                   'digital ecosystems across industries.',
+//               'Unified Web Options & Services (UWO) is an AI-first global technology '
+//                   'company focused on building scalable, intelligent digital platforms. '
+//                   'We serve enterprises, creators, developers, and future-facing ecosystems '
+//                   'by designing systems that prioritize intelligence, clarity, and long-term architectural thinking.',
+//               textAlign: TextAlign.center,
 //               style: TextStyle(
 //                 fontSize: 18,
-//                 height: 1.6,
+//                 height: 1.7,
 //                 color: AppTheme.textMuted,
 //               ),
 //             ),
@@ -672,35 +82,143 @@
 //   }
 // }
 //
-// /* ================= TECHNOLOGY ================= */
+// /* ================= COMPANY OVERVIEW ================= */
 //
-// class _TechnologySection extends StatelessWidget {
-//   const _TechnologySection();
+// class _CompanyOverviewSection extends StatelessWidget {
+//   const _CompanyOverviewSection();
 //
 //   @override
 //   Widget build(BuildContext context) {
 //     return Container(
 //       width: double.infinity,
-//       padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 90),
-//       color: const Color(0xFFF8FAFC),
-//       child: const Column(
-//         crossAxisAlignment: CrossAxisAlignment.start,
-//         children: [
+//       padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 100),
+//       color: Colors.white,
+//       child: Column(
+//         crossAxisAlignment: CrossAxisAlignment.center,
+//         children: const [
 //           Text(
-//             'Technology That Scales With Intelligence',
+//             'Who We Are',
+//             textAlign: TextAlign.center,
 //             style: TextStyle(
-//               fontSize: 32,
+//               fontSize: 34,
 //               fontWeight: FontWeight.bold,
 //             ),
 //           ),
-//           SizedBox(height: 24),
+//           SizedBox(height: 30),
+//           SizedBox(
+//             width: 900,
+//             child: Text(
+//               'Unified Web Options & Services (UWO) operates at the intersection of '
+//                   'engineering, research, and applied intelligence. Our work focuses on '
+//                   'building foundational technology — not short-term tools — by embedding '
+//                   'intelligence into system architecture and research-led innovation.',
+//               textAlign: TextAlign.center,
+//               style: TextStyle(
+//                 fontSize: 18,
+//                 height: 1.7,
+//                 color: AppTheme.textMuted,
+//               ),
+//             ),
+//           ),
+//         ],
+//       ),
+//     );
+//   }
+// }
+//
+// /* ================= VISION & MISSION ================= */
+//
+// class _VisionMissionSection extends StatelessWidget {
+//   const _VisionMissionSection();
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return Container(
+//       width: double.infinity,
+//       padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 110),
+//       color: const Color(0xFFEFF6FA),
+//       child: Column(
+//         crossAxisAlignment: CrossAxisAlignment.center,
+//         children: const [
 //           Text(
-//             '• AI Platform & Ecosystem\n'
-//                 '• Enterprise Digital Solutions\n'
-//                 '• Research-Driven Incubation',
+//             'Vision & Mission',
+//             textAlign: TextAlign.center,
+//             style: TextStyle(
+//               fontSize: 34,
+//               fontWeight: FontWeight.bold,
+//             ),
+//           ),
+//           SizedBox(height: 40),
+//           SizedBox(
+//             width: 900,
+//             child: Text(
+//               'Vision\n\n'
+//                   'To become a globally trusted technology company shaping the future of '
+//                   'intelligent digital systems.\n\n'
+//                   'Mission\n\n'
+//                   'To design AI platforms and intelligence frameworks that are powerful, '
+//                   'ethical, and human-centric — enabling meaningful impact across industries '
+//                   'and societies.',
+//               textAlign: TextAlign.center,
+//               style: TextStyle(
+//                 fontSize: 18,
+//                 height: 1.8,
+//                 color: AppTheme.textMuted,
+//               ),
+//             ),
+//           ),
+//         ],
+//       ),
+//     );
+//   }
+// }
+//
+// /* ================= APPROACH ================= */
+//
+// class _ApproachSection extends StatelessWidget {
+//   const _ApproachSection();
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return Container(
+//       width: double.infinity,
+//       padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 110),
+//       color: Colors.white,
+//       child: Column(
+//         crossAxisAlignment: CrossAxisAlignment.center,
+//         children: const [
+//           Text(
+//             'Our Engineering Philosophy',
+//             textAlign: TextAlign.center,
+//             style: TextStyle(
+//               fontSize: 34,
+//               fontWeight: FontWeight.bold,
+//             ),
+//           ),
+//           SizedBox(height: 32),
+//           SizedBox(
+//             width: 900,
+//             child: Text(
+//               'Our work is guided by a clear set of principles that prioritize '
+//                   'sustainability over speed and systems over fragmented tools.',
+//               textAlign: TextAlign.center,
+//               style: TextStyle(
+//                 fontSize: 18,
+//                 height: 1.7,
+//                 color: AppTheme.textMuted,
+//               ),
+//             ),
+//           ),
+//           SizedBox(height: 40),
+//           Text(
+//             '• Systems over tools — We build foundations, not fragments\n'
+//                 '• Clarity over complexity — Intelligence should simplify, not confuse\n'
+//                 '• Intelligence as infrastructure — AI embedded at the core\n'
+//                 '• Long-term architecture thinking — Platforms designed for decades',
+//             textAlign: TextAlign.center,
 //             style: TextStyle(
 //               fontSize: 18,
-//               height: 1.8,
+//               height: 1.9,
 //             ),
 //           ),
 //         ],
@@ -709,38 +227,38 @@
 //   }
 // }
 //
-// /* ================= GLOBAL ================= */
+// /* ================= VALUES ================= */
 //
-// class _GlobalSection extends StatelessWidget {
-//   const _GlobalSection();
+// class _ValuesSection extends StatelessWidget {
+//   const _ValuesSection();
 //
 //   @override
 //   Widget build(BuildContext context) {
 //     return Container(
 //       width: double.infinity,
-//       padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 90),
-//       color: const Color(0xFFEFF6FA),
-//       child: const Column(
-//         crossAxisAlignment: CrossAxisAlignment.start,
-//         children: [
+//       padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 120),
+//       color: const Color(0xFFF8FAFC),
+//       child: Column(
+//         crossAxisAlignment: CrossAxisAlignment.center,
+//         children: const [
 //           Text(
-//             'Built For Global Scale',
+//             'Our Core Values',
+//             textAlign: TextAlign.center,
 //             style: TextStyle(
-//               fontSize: 32,
+//               fontSize: 34,
 //               fontWeight: FontWeight.bold,
 //             ),
 //           ),
-//           SizedBox(height: 24),
-//           SizedBox(
-//             width: 800,
-//             child: Text(
-//               'Our platforms are designed with a global-first mindset — '
-//                   'scalable, secure, and adaptable across regions and industries.',
-//               style: TextStyle(
-//                 fontSize: 18,
-//                 height: 1.6,
-//                 color: AppTheme.textMuted,
-//               ),
+//           SizedBox(height: 40),
+//           Text(
+//             '• Innovation with responsibility\n'
+//                 '• Global mindset & inclusivity\n'
+//                 '• Research-led development\n'
+//                 '• Transparency & long-term trust',
+//             textAlign: TextAlign.center,
+//             style: TextStyle(
+//               fontSize: 18,
+//               height: 1.9,
 //             ),
 //           ),
 //         ],
@@ -751,7 +269,6 @@
 import 'package:flutter/material.dart';
 import '../widgets/uwo_navbar.dart';
 import '../widgets/uwo_footer.dart';
-import '../theme/app_theme.dart';
 import '../widgets/mobile_drawer.dart';
 
 class AboutPage extends StatelessWidget {
@@ -760,27 +277,40 @@ class AboutPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar:UWONavbar(),
-      endDrawer: MediaQuery.of(context).size.width < 768
-          ? UWOMobileDrawer()
-          : null,
+      appBar: UWONavbar(),
+      endDrawer:
+      MediaQuery.of(context).size.width < 768 ? const UWOMobileDrawer() : null,
 
-      body: SingleChildScrollView(
-        child: Column(
-          children: const [
-            _IntroSection(),
-            _WhoWeAreSection(),
-            _VisionMissionSection(),
-            _ValuesSection(),
-            UWOFooter(),
-          ],
-        ),
+      body: Stack(
+        children: [
+          /// 🔥 FULL PAGE BACKGROUND IMAGE (Navbar ke neeche)
+          Positioned.fill(
+            child: Image.asset(
+              'assets/images/about-bg.jpg',
+              fit: BoxFit.cover,
+            ),
+          ),
+
+          /// 🔹 CONTENT
+          SingleChildScrollView(
+            child: Column(
+              children: const [
+                _IntroSection(),
+                _CompanyOverviewSection(),
+                _VisionMissionSection(),
+                _ApproachSection(),
+                _ValuesSection(),
+                UWOFooter(),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }
 }
 
-/* ================= INTRO ================= */
+/* ================= SECTION 1 — INTRO (DARK) ================= */
 
 class _IntroSection extends StatelessWidget {
   const _IntroSection();
@@ -789,36 +319,34 @@ class _IntroSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 110),
-      decoration: const BoxDecoration(
-        gradient: LinearGradient(
-          colors: [
-            Color(0xFFF4F6F8),
-            Color(0xFFF1E6D6),
-          ],
-        ),
-      ),
-      child: const Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
+      padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 120),
+      color: const Color(0xFF162836).withOpacity(0.65),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: const [
           Text(
             'About UWO',
+            textAlign: TextAlign.center,
             style: TextStyle(
-              fontSize: 38,
+              fontSize: 42,
               fontWeight: FontWeight.bold,
+              color: Colors.white,
             ),
           ),
-          SizedBox(height: 24),
+          SizedBox(height: 32),
           SizedBox(
             width: 900,
             child: Text(
-              'Unified Web Options & Services (UWO) is a technology-driven '
-                  'organization focused on building intelligent digital platforms '
-                  'that scale globally and adapt to real-world complexity.',
+              'Unified Web Options & Services (UWO) is an AI-first global technology '
+                  'company focused on building scalable, intelligent digital platforms. '
+                  'We serve enterprises, creators, developers, and future-facing ecosystems '
+                  'by designing systems that prioritize intelligence, clarity, and long-term architectural thinking.',
+              textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 18,
-                height: 1.6,
-                color: AppTheme.textMuted,
+                height: 1.7,
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
               ),
             ),
           ),
@@ -828,38 +356,43 @@ class _IntroSection extends StatelessWidget {
   }
 }
 
-/* ================= WHO WE ARE ================= */
+/* ================= SECTION 2 — COMPANY OVERVIEW (LIGHT) ================= */
 
-class _WhoWeAreSection extends StatelessWidget {
-  const _WhoWeAreSection();
+class _CompanyOverviewSection extends StatelessWidget {
+  const _CompanyOverviewSection();
 
   @override
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 90),
-      color: Colors.white,
-      child: const Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
+      padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 100),
+      color: const Color(0xFF3A5F78).withOpacity(0.45),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: const [
           Text(
             'Who We Are',
+            textAlign: TextAlign.center,
             style: TextStyle(
-              fontSize: 32,
+              fontSize: 34,
               fontWeight: FontWeight.bold,
+              color: Colors.white,
             ),
           ),
-          SizedBox(height: 24),
+          SizedBox(height: 30),
           SizedBox(
             width: 900,
             child: Text(
-              'UWO operates at the intersection of engineering, research, and '
-                  'applied intelligence. We design platforms that enable intelligent '
-                  'automation, scalable systems, and future-ready digital ecosystems.',
+              'Unified Web Options & Services (UWO) operates at the intersection of '
+                  'engineering, research, and applied intelligence. Our work focuses on '
+                  'building foundational technology — not short-term tools — by embedding '
+                  'intelligence into system architecture and research-led innovation.',
+              textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 18,
-                height: 1.6,
-                color: AppTheme.textMuted,
+                height: 1.7,
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
               ),
             ),
           ),
@@ -869,7 +402,7 @@ class _WhoWeAreSection extends StatelessWidget {
   }
 }
 
-/* ================= VISION & MISSION ================= */
+/* ================= SECTION 3 — VISION & MISSION (DARK) ================= */
 
 class _VisionMissionSection extends StatelessWidget {
   const _VisionMissionSection();
@@ -878,31 +411,37 @@ class _VisionMissionSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 90),
-      color: const Color(0xFFEFF6FA),
-      child: const Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
+      padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 110),
+      color: const Color(0xFF162836).withOpacity(0.65),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: const [
           Text(
             'Vision & Mission',
+            textAlign: TextAlign.center,
             style: TextStyle(
-              fontSize: 32,
+              fontSize: 34,
               fontWeight: FontWeight.bold,
+              color: Colors.white,
             ),
           ),
-          SizedBox(height: 24),
+          SizedBox(height: 40),
           SizedBox(
             width: 900,
             child: Text(
-              'Our vision is to become a globally trusted technology partner '
-                  'for intelligent digital systems.\n\n'
-                  'Our mission is to build ethical, scalable, and human-centric '
-                  'platforms that solve complex challenges through innovation '
-                  'and engineering excellence.',
+              'Vision\n\n'
+                  'To become a globally trusted technology company shaping the future of '
+                  'intelligent digital systems.\n\n'
+                  'Mission\n\n'
+                  'To design AI platforms and intelligence frameworks that are powerful, '
+                  'ethical, and human-centric — enabling meaningful impact across industries '
+                  'and societies.',
+              textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 18,
-                height: 1.6,
-                color: AppTheme.textMuted,
+                height: 1.8,
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
               ),
             ),
           ),
@@ -912,7 +451,65 @@ class _VisionMissionSection extends StatelessWidget {
   }
 }
 
-/* ================= VALUES ================= */
+/* ================= SECTION 4 — APPROACH (LIGHT) ================= */
+
+class _ApproachSection extends StatelessWidget {
+  const _ApproachSection();
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: double.infinity,
+      padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 110),
+      color: const Color(0xFF3A5F78).withOpacity(0.45),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: const [
+          Text(
+            'Our Engineering Philosophy',
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontSize: 34,
+              fontWeight: FontWeight.bold,
+              color: Colors.white,
+            ),
+          ),
+          SizedBox(height: 32),
+          SizedBox(
+            width: 900,
+            child: Text(
+              'Our work is guided by a clear set of principles that prioritize '
+                  'sustainability over speed and systems over fragmented tools.',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontSize: 18,
+                height: 1.7,
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+              ),
+            ),
+          ),
+          SizedBox(height: 40),
+          Text(
+            '• Systems over tools — We build foundations, not fragments\n'
+                '• Clarity over complexity — Intelligence should simplify, not confuse\n'
+                '• Intelligence as infrastructure — AI embedded at the core\n'
+                '• Long-term architecture thinking — Platforms designed for decades',
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontSize: 18,
+              height: 1.9,
+              fontWeight: FontWeight.bold,
+              color: Colors.white,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+/* ================= SECTION 5 — VALUES (DARK) ================= */
 
 class _ValuesSection extends StatelessWidget {
   const _ValuesSection();
@@ -921,28 +518,32 @@ class _ValuesSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 90),
-      color: Colors.white,
-      child: const Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
+      padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 120),
+      color: const Color(0xFF162836).withOpacity(0.65),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: const [
           Text(
-            'Our Values',
+            'Our Core Values',
+            textAlign: TextAlign.center,
             style: TextStyle(
-              fontSize: 32,
+              fontSize: 34,
               fontWeight: FontWeight.bold,
+              color: Colors.white,
             ),
           ),
-          SizedBox(height: 24),
+          SizedBox(height: 40),
           Text(
-            '• Engineering excellence\n'
-                '• Responsible innovation\n'
-                '• Long-term thinking\n'
-                '• Human-centric intelligence\n'
-                '• Transparency and trust',
+            '• Innovation with responsibility\n'
+                '• Global mindset & inclusivity\n'
+                '• Research-led development\n'
+                '• Transparency & long-term trust',
+            textAlign: TextAlign.center,
             style: TextStyle(
               fontSize: 18,
-              height: 1.8,
+              height: 1.9,
+              fontWeight: FontWeight.bold,
+              color: Colors.white,
             ),
           ),
         ],

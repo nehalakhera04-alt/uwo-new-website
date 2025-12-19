@@ -1,69 +1,26 @@
-// // // import 'package:flutter/material.dart';
-// // // import '../widgets/uwo_navbar.dart';
-// // // import '../widgets/uwo_footer.dart';
-// // // import '../widgets/uwo_section.dart';
-// // // import '../theme/app_theme.dart';
-// // //
-// // // class PartnershipPage extends StatelessWidget {
-// // //   const PartnershipPage({super.key});
-// // //
-// // //   @override
-// // //   Widget build(BuildContext context) {
-// // //     return Scaffold(
-// // //       appBar:UWONavbar(),
-// // //       body: SingleChildScrollView(
-// // //         child: Column(
-// // //           children: [
-// // //             UWOSection(
-// // //               title: 'Partner With UWO',
-// // //               background: AppTheme.sectionBlue,
-// // //               isGolden: true,
-// // //               content: Text(
-// // //                 'Build The Future Together',
-// // //                 style: Theme.of(context).textTheme.bodyLarge,
-// // //               ),
-// // //             ),
-// // //             UWOSection(
-// // //               title: 'Who Can Partner',
-// // //               background: AppTheme.background,
-// // //               content: Column(
-// // //                 crossAxisAlignment: CrossAxisAlignment.start,
-// // //                 children: const [
-// // //                   Text('• Technology Companies'),
-// // //                   Text('• AI Startups'),
-// // //                   Text('• Research Institutions'),
-// // //                   Text('• Enterprise Partners'),
-// // //                 ],
-// // //               ),
-// // //             ),
-// // //             const UWOFooter(),
-// // //           ],
-// // //         ),
-// // //       ),
-// // //     );
-// // //   }
-// // // }
 // // import 'package:flutter/material.dart';
 // // import '../widgets/uwo_navbar.dart';
 // // import '../widgets/uwo_footer.dart';
 // // import '../theme/app_theme.dart';
+// // import '../widgets/mobile_drawer.dart';
 // //
-// // class PartnershipPage extends StatelessWidget {
-// //   const PartnershipPage({super.key});
+// // class PartnersPage extends StatelessWidget {
+// //   const PartnersPage({super.key});
 // //
 // //   @override
 // //   Widget build(BuildContext context) {
 // //     return Scaffold(
 // //       appBar: UWONavbar(),
-// //       endDrawer: const Drawer(),
+// //       endDrawer: MediaQuery.of(context).size.width < 768
+// //           ? UWOMobileDrawer()
+// //           : null,
 // //       body: SingleChildScrollView(
 // //         child: Column(
-// //           crossAxisAlignment: CrossAxisAlignment.start,
 // //           children: const [
-// //             _PartnershipIntroSection(),
-// //             _WhoWePartnerWithSection(),
-// //             _ValueSection(),
-// //             _ClosingSection(),
+// //             _HeroSection(),
+// //             _IntroSection(),
+// //             _WhoCanPartnerSection(),
+// //             _ValueForPartnersSection(),
 // //             UWOFooter(),
 // //           ],
 // //         ),
@@ -72,58 +29,16 @@
 // //   }
 // // }
 // //
-// // /* =========================================================
-// //    1️⃣ INTRO — PARTNERSHIPS
-// // ========================================================= */
-// // class _PartnershipIntroSection extends StatelessWidget {
-// //   const _PartnershipIntroSection();
+// // /* ================= HERO ================= */
+// //
+// // class _HeroSection extends StatelessWidget {
+// //   const _HeroSection();
 // //
 // //   @override
 // //   Widget build(BuildContext context) {
 // //     return Container(
 // //       width: double.infinity,
-// //       padding: const EdgeInsets.symmetric(vertical: 100, horizontal: 80),
-// //       color: Color(0xFFEFF6FA),
-// //       child: Column(
-// //         crossAxisAlignment: CrossAxisAlignment.start,
-// //         children: const [
-// //           Text(
-// //             'Partnerships',
-// //             style: TextStyle(
-// //               fontSize: 36,
-// //               fontWeight: FontWeight.bold,
-// //             ),
-// //           ),
-// //           SizedBox(height: 24),
-// //           SizedBox(
-// //             width: 900,
-// //             child: Text(
-// //               'UWO believes in the power of strategic collaboration. We partner with organizations, '
-// //                   'institutions, and innovators who share our vision of building intelligent, scalable, '
-// //                   'and future-ready digital systems.',
-// //               style: TextStyle(
-// //                 fontSize: 18,
-// //                 color: AppTheme.textMuted,
-// //               ),
-// //             ),
-// //           ),
-// //         ],
-// //       ),
-// //     );
-// //   }
-// // }
-// //
-// // /* =========================================================
-// //    2️⃣ WHO WE PARTNER WITH
-// // ========================================================= */
-// // class _WhoWePartnerWithSection extends StatelessWidget {
-// //   const _WhoWePartnerWithSection();
-// //
-// //   @override
-// //   Widget build(BuildContext context) {
-// //     return Container(
-// //       width: double.infinity,
-// //       padding: const EdgeInsets.symmetric(vertical: 100, horizontal: 80),
+// //       padding: const EdgeInsets.symmetric(vertical: 110),
 // //       decoration: const BoxDecoration(
 // //         gradient: LinearGradient(
 // //           colors: [
@@ -132,28 +47,27 @@
 // //           ],
 // //         ),
 // //       ),
-// //       child: Column(
-// //         crossAxisAlignment: CrossAxisAlignment.start,
-// //         children: const [
+// //       child: const Column(
+// //         crossAxisAlignment: CrossAxisAlignment.center,
+// //         children: [
 // //           Text(
-// //             'Who We Partner With',
+// //             'Partnerships',
+// //             textAlign: TextAlign.center,
 // //             style: TextStyle(
-// //               fontSize: 36,
+// //               fontSize: 44,
 // //               fontWeight: FontWeight.bold,
 // //             ),
 // //           ),
-// //           SizedBox(height: 32),
+// //           SizedBox(height: 28),
 // //           SizedBox(
-// //             width: 900,
+// //             width: 850,
 // //             child: Text(
-// //               '• Technology organizations and enterprises\n\n'
-// //                   '• Research institutions and academic partners\n\n'
-// //                   '• Platform and ecosystem collaborators\n\n'
-// //                   '• Innovation-driven startups and solution providers\n\n'
-// //                   '• Strategic partners aligned with long-term vision',
+// //               'We believe strong partnerships are essential to building intelligent, '
+// //                   'scalable systems that create long-term value.',
+// //               textAlign: TextAlign.center,
 // //               style: TextStyle(
 // //                 fontSize: 18,
-// //                 height: 1.6,
+// //                 height: 1.7,
 // //                 color: AppTheme.textMuted,
 // //               ),
 // //             ),
@@ -164,78 +78,38 @@
 // //   }
 // // }
 // //
-// // /* =========================================================
-// //    3️⃣ PARTNERSHIP VALUE
-// // ========================================================= */
-// // class _ValueSection extends StatelessWidget {
-// //   const _ValueSection();
+// // /* ================= SECTION 1 — INTRO ================= */
+// //
+// // class _IntroSection extends StatelessWidget {
+// //   const _IntroSection();
 // //
 // //   @override
 // //   Widget build(BuildContext context) {
 // //     return Container(
 // //       width: double.infinity,
-// //       padding: const EdgeInsets.symmetric(vertical: 100, horizontal: 80),
-// //       color: Color(0xFFEFF6FA),
-// //       child: Column(
-// //         crossAxisAlignment: CrossAxisAlignment.start,
-// //         children: const [
-// //           Text(
-// //             'Creating Mutual Value',
-// //             style: TextStyle(
-// //               fontSize: 36,
-// //               fontWeight: FontWeight.bold,
-// //             ),
-// //           ),
-// //           SizedBox(height: 24),
-// //           SizedBox(
-// //             width: 900,
-// //             child: Text(
-// //               'Our partnerships are built on transparency, shared goals, and mutual growth. '
-// //                   'We collaborate closely to co-create platforms, explore new technologies, '
-// //                   'and deliver solutions that generate long-term value for all stakeholders.',
-// //               style: TextStyle(
-// //                 fontSize: 18,
-// //                 color: AppTheme.textMuted,
-// //               ),
-// //             ),
-// //           ),
-// //         ],
-// //       ),
-// //     );
-// //   }
-// // }
-// //
-// // /* =========================================================
-// //    4️⃣ CLOSING SECTION
-// // ========================================================= */
-// // class _ClosingSection extends StatelessWidget {
-// //   const _ClosingSection();
-// //
-// //   @override
-// //   Widget build(BuildContext context) {
-// //     return Container(
-// //       width: double.infinity,
-// //       padding: const EdgeInsets.symmetric(vertical: 100, horizontal: 80),
+// //       padding: const EdgeInsets.symmetric(vertical: 110),
 // //       color: Colors.white,
-// //       child: Column(
-// //         crossAxisAlignment: CrossAxisAlignment.start,
-// //         children: const [
+// //       child: const Column(
+// //         crossAxisAlignment: CrossAxisAlignment.center,
+// //         children: [
 // //           Text(
-// //             'Let’s Build the Future Together',
+// //             'Partner With UWO',
+// //             textAlign: TextAlign.center,
 // //             style: TextStyle(
-// //               fontSize: 36,
+// //               fontSize: 32,
 // //               fontWeight: FontWeight.bold,
 // //             ),
 // //           ),
-// //           SizedBox(height: 24),
+// //           SizedBox(height: 26),
 // //           SizedBox(
-// //             width: 900,
+// //             width: 850,
 // //             child: Text(
-// //               'If you are interested in collaborating with UWO on innovative platforms, '
-// //                   'research initiatives, or technology-driven solutions, we welcome you '
-// //                   'to explore partnership opportunities with us.',
+// //               'We collaborate with organizations that share our vision of '
+// //                   'building intelligent, scalable systems designed for long-term impact.',
+// //               textAlign: TextAlign.center,
 // //               style: TextStyle(
 // //                 fontSize: 18,
+// //                 height: 1.7,
 // //                 color: AppTheme.textMuted,
 // //               ),
 // //             ),
@@ -246,63 +120,175 @@
 // //   }
 // // }
 // //
+// // /* ================= SECTION 2 — WHO CAN PARTNER ================= */
+// //
+// // class _WhoCanPartnerSection extends StatelessWidget {
+// //   const _WhoCanPartnerSection();
+// //
+// //   @override
+// //   Widget build(BuildContext context) {
+// //     return Container(
+// //       width: double.infinity,
+// //       padding: const EdgeInsets.symmetric(vertical: 110),
+// //       color: const Color(0xFFF8FAFC),
+// //       child: const Column(
+// //         crossAxisAlignment: CrossAxisAlignment.center,
+// //         children: [
+// //           Text(
+// //             'Who Can Partner',
+// //             textAlign: TextAlign.center,
+// //             style: TextStyle(
+// //               fontSize: 32,
+// //               fontWeight: FontWeight.bold,
+// //             ),
+// //           ),
+// //           SizedBox(height: 30),
+// //           SizedBox(
+// //             width: 700,
+// //             child: Text(
+// //               '• Technology companies\n'
+// //                   '• AI startups\n'
+// //                   '• Research institutions\n'
+// //                   '• Enterprise partners',
+// //               textAlign: TextAlign.center,
+// //               style: TextStyle(
+// //                 fontSize: 18,
+// //                 height: 2.0,
+// //               ),
+// //             ),
+// //           ),
+// //         ],
+// //       ),
+// //     );
+// //   }
+// // }
+// //
+// // /* ================= SECTION 3 — VALUE FOR PARTNERS ================= */
+// //
+// // class _ValueForPartnersSection extends StatelessWidget {
+// //   const _ValueForPartnersSection();
+// //
+// //   @override
+// //   Widget build(BuildContext context) {
+// //     return Container(
+// //       width: double.infinity,
+// //       padding: const EdgeInsets.symmetric(vertical: 110),
+// //       color: Colors.white,
+// //       child: const Column(
+// //         crossAxisAlignment: CrossAxisAlignment.center,
+// //         children: [
+// //           Text(
+// //             'Value for Partners',
+// //             textAlign: TextAlign.center,
+// //             style: TextStyle(
+// //               fontSize: 32,
+// //               fontWeight: FontWeight.bold,
+// //             ),
+// //           ),
+// //           SizedBox(height: 30),
+// //           SizedBox(
+// //             width: 700,
+// //             child: Text(
+// //               '• Platform access\n'
+// //                   '• Joint innovation opportunities\n'
+// //                   '• Global exposure & scalability',
+// //               textAlign: TextAlign.center,
+// //               style: TextStyle(
+// //                 fontSize: 18,
+// //                 height: 2.0,
+// //               ),
+// //             ),
+// //           ),
+// //         ],
+// //       ),
+// //     );
+// //   }
+// // }
 // import 'package:flutter/material.dart';
 // import '../widgets/uwo_navbar.dart';
 // import '../widgets/uwo_footer.dart';
 // import '../theme/app_theme.dart';
+// import '../widgets/mobile_drawer.dart';
 //
-// class PartnershipPage extends StatelessWidget {
-//   const PartnershipPage({super.key});
+// class PartnersPage extends StatelessWidget {
+//   const PartnersPage({super.key});
 //
 //   @override
 //   Widget build(BuildContext context) {
 //     return Scaffold(
-//       appBar: const UWONavbar(),
-//       body: SingleChildScrollView(
-//         child: Column(
-//           children: const [
-//             _HeaderSection(),
-//             _PartnershipModel(),
-//             _CallToAction(),
-//             UWOFooter(),
-//           ],
-//         ),
+//       appBar: UWONavbar(),
+//       endDrawer: MediaQuery.of(context).size.width < 768
+//           ? UWOMobileDrawer()
+//           : null,
+//
+//       body: Stack(
+//         children: [
+//           // 🔥 BACKGROUND IMAGE (NAVBAR KE NEECHHE FULL)
+//           Positioned.fill(
+//             child: Image.asset(
+//               'assets/images/partnership-bg.jpg', // 👈 image path
+//               fit: BoxFit.cover,
+//             ),
+//           ),
+//
+//           // 🔹 PAGE CONTENT
+//           SingleChildScrollView(
+//             child: Column(
+//               children: const [
+//                 _HeroSection(),
+//                 _IntroSection(),
+//                 _WhoCanPartnerSection(),
+//                 _ValueForPartnersSection(),
+//                 SizedBox(height: 80),
+//                 UWOFooter(),
+//               ],
+//             ),
+//           ),
+//         ],
 //       ),
 //     );
 //   }
 // }
 //
-// /* ================= HEADER ================= */
+// /* ================= HERO ================= */
 //
-// class _HeaderSection extends StatelessWidget {
-//   const _HeaderSection();
+// class _HeroSection extends StatelessWidget {
+//   const _HeroSection();
 //
 //   @override
 //   Widget build(BuildContext context) {
 //     return Container(
 //       width: double.infinity,
-//       padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 100),
+//       padding: const EdgeInsets.symmetric(vertical: 110),
 //       decoration: const BoxDecoration(
 //         gradient: LinearGradient(
-//           colors: [Color(0xFFF4F6F8), Color(0xFFF1E6D6)],
+//           colors: [
+//             Color(0xFFF4F6F8),
+//             Color(0xFFF1E6D6),
+//           ],
 //         ),
 //       ),
 //       child: const Column(
-//         crossAxisAlignment: CrossAxisAlignment.start,
+//         crossAxisAlignment: CrossAxisAlignment.center,
 //         children: [
 //           Text(
 //             'Partnerships',
-//             style: TextStyle(fontSize: 38, fontWeight: FontWeight.bold),
+//             textAlign: TextAlign.center,
+//             style: TextStyle(
+//               fontSize: 44,
+//               fontWeight: FontWeight.bold,
+//             ),
 //           ),
-//           SizedBox(height: 20),
+//           SizedBox(height: 28),
 //           SizedBox(
-//             width: 900,
+//             width: 850,
 //             child: Text(
-//               'We collaborate with organizations, innovators, and technology '
-//                   'leaders to build intelligent, scalable, and impactful solutions.',
+//               'We believe strong partnerships are essential to building intelligent, '
+//                   'scalable systems that create long-term value.',
+//               textAlign: TextAlign.center,
 //               style: TextStyle(
 //                 fontSize: 18,
-//                 height: 1.6,
+//                 height: 1.7,
 //                 color: AppTheme.textMuted,
 //               ),
 //             ),
@@ -313,30 +299,41 @@
 //   }
 // }
 //
-// /* ================= MODEL ================= */
+// /* ================= INTRO ================= */
 //
-// class _PartnershipModel extends StatelessWidget {
-//   const _PartnershipModel();
+// class _IntroSection extends StatelessWidget {
+//   const _IntroSection();
 //
 //   @override
 //   Widget build(BuildContext context) {
 //     return Container(
-//       padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 90),
-//       color: Colors.white,
+//       width: double.infinity,
+//       padding: const EdgeInsets.symmetric(vertical: 110),
+//       color: Colors.white.withOpacity(0.75), // 🟦 home-style light
 //       child: const Column(
-//         crossAxisAlignment: CrossAxisAlignment.start,
+//         crossAxisAlignment: CrossAxisAlignment.center,
 //         children: [
 //           Text(
-//             'Our Partnership Model',
-//             style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
+//             'Partner With UWO',
+//             textAlign: TextAlign.center,
+//             style: TextStyle(
+//               fontSize: 32,
+//               fontWeight: FontWeight.bold,
+//             ),
 //           ),
-//           SizedBox(height: 24),
-//           Text(
-//             '• Technology Partnerships\n'
-//                 '• Research & Innovation Collaboration\n'
-//                 '• Platform & Ecosystem Alliances\n'
-//                 '• Long-term Strategic Engagements',
-//             style: TextStyle(fontSize: 18, height: 1.8),
+//           SizedBox(height: 26),
+//           SizedBox(
+//             width: 850,
+//             child: Text(
+//               'We collaborate with organizations that share our vision of '
+//                   'building intelligent, scalable systems designed for long-term impact.',
+//               textAlign: TextAlign.center,
+//               style: TextStyle(
+//                 fontSize: 18,
+//                 height: 1.7,
+//                 color: AppTheme.textMuted,
+//               ),
+//             ),
 //           ),
 //         ],
 //       ),
@@ -344,34 +341,86 @@
 //   }
 // }
 //
-// /* ================= CTA ================= */
+// /* ================= WHO CAN PARTNER ================= */
 //
-// class _CallToAction extends StatelessWidget {
-//   const _CallToAction();
+// class _WhoCanPartnerSection extends StatelessWidget {
+//   const _WhoCanPartnerSection();
 //
 //   @override
 //   Widget build(BuildContext context) {
 //     return Container(
-//       padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 90),
-//       color: const Color(0xFFEFF6FA),
+//       width: double.infinity,
+//       padding: const EdgeInsets.symmetric(vertical: 110),
+//       color: const Color(0xFF3A5F78).withOpacity(0.65), // 🔥 home dark section
 //       child: const Column(
-//         crossAxisAlignment: CrossAxisAlignment.start,
+//         crossAxisAlignment: CrossAxisAlignment.center,
 //         children: [
 //           Text(
-//             'Let’s Build Together',
-//             style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
+//             'Who Can Partner',
+//             textAlign: TextAlign.center,
+//             style: TextStyle(
+//               fontSize: 32,
+//               fontWeight: FontWeight.bold,
+//               color: Colors.white,
+//             ),
 //           ),
-//           SizedBox(height: 24),
+//           SizedBox(height: 30),
 //           SizedBox(
-//             width: 900,
+//             width: 700,
 //             child: Text(
-//               'If you are interested in partnering with UWO, we would love '
-//                   'to explore how we can collaborate to create long-term value '
-//                   'through intelligent technology.',
+//               '• Technology companies\n'
+//                   '• AI startups\n'
+//                   '• Research institutions\n'
+//                   '• Enterprise partners',
+//               textAlign: TextAlign.center,
 //               style: TextStyle(
 //                 fontSize: 18,
-//                 height: 1.6,
-//                 color: AppTheme.textMuted,
+//                 height: 2.0,
+//                 color: Colors.white,
+//                 fontWeight: FontWeight.bold,
+//               ),
+//             ),
+//           ),
+//         ],
+//       ),
+//     );
+//   }
+// }
+//
+// /* ================= VALUE FOR PARTNERS ================= */
+//
+// class _ValueForPartnersSection extends StatelessWidget {
+//   const _ValueForPartnersSection();
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return Container(
+//       width: double.infinity,
+//       padding: const EdgeInsets.symmetric(vertical: 110),
+//       color: Colors.white.withOpacity(0.75),
+//       child: const Column(
+//         crossAxisAlignment: CrossAxisAlignment.center,
+//         children: [
+//           Text(
+//             'Value for Partners',
+//             textAlign: TextAlign.center,
+//             style: TextStyle(
+//               fontSize: 32,
+//               fontWeight: FontWeight.bold,
+//             ),
+//           ),
+//           SizedBox(height: 30),
+//           SizedBox(
+//             width: 700,
+//             child: Text(
+//               '• Platform access\n'
+//                   '• Joint innovation opportunities\n'
+//                   '• Global exposure & scalability',
+//               textAlign: TextAlign.center,
+//               style: TextStyle(
+//                 fontSize: 18,
+//                 height: 2.0,
+//                 fontWeight: FontWeight.bold,
 //               ),
 //             ),
 //           ),
@@ -383,36 +432,101 @@
 import 'package:flutter/material.dart';
 import '../widgets/uwo_navbar.dart';
 import '../widgets/uwo_footer.dart';
-import '../theme/app_theme.dart';
 import '../widgets/mobile_drawer.dart';
 
-class PartnershipPage extends StatelessWidget {
-  const PartnershipPage({super.key});
+class PartnersPage extends StatelessWidget {
+  const PartnersPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar:UWONavbar(),
-      endDrawer: MediaQuery.of(context).size.width < 768
-          ? UWOMobileDrawer()
-          : null,
+      appBar: UWONavbar(),
+      endDrawer:
+      MediaQuery.of(context).size.width < 768 ? UWOMobileDrawer() : null,
 
-      body: SingleChildScrollView(
-        child: Column(
-          children: const [
-            _IntroSection(),
-            _WhyPartnerSection(),
-            _PartnershipModelsSection(),
-            _CallToActionSection(),
-            UWOFooter(),
-          ],
-        ),
+      body: Stack(
+        children: [
+          // 🔥 BACKGROUND IMAGE (FULL PAGE)
+          Positioned.fill(
+            child: Image.asset(
+              'assets/images/partnership-bg.jpg', // 👈 image ka correct path
+              fit: BoxFit.cover,
+            ),
+          ),
+
+          // 🔹 PAGE CONTENT
+          SingleChildScrollView(
+            child: Column(
+              children: const [
+                _HeroSection(),
+                _IntroSection(),
+                _WhoCanPartnerSection(),
+                _ValueForPartnersSection(),
+                SizedBox(height: 120),
+                UWOFooter(),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }
 }
 
-/* ================= INTRO ================= */
+/* ================= HERO ================= */
+
+class _HeroSection extends StatelessWidget {
+  const _HeroSection();
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: double.infinity,
+      padding: const EdgeInsets.symmetric(vertical: 110),
+      // decoration: const BoxDecoration(
+      //   gradient: LinearGradient(
+      //     colors: [
+      //       Color(0xFFF4F6F8),
+      //       Color(0xFFF1E6D6),
+      //     ],
+      //   ),
+      // ),
+      color: const Color(0xFF162836).withOpacity(0.65),
+      child: const Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Text(
+            'Partnerships',
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontSize: 44,
+              fontWeight: FontWeight.bold,
+              color: Colors.white,
+            ),
+          ),
+          SizedBox(height: 28),
+          SizedBox(
+            width: 850,
+            child: Text(
+              'We believe strong partnerships are essential to building intelligent, '
+                  'scalable systems that create long-term value.',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontSize: 18,
+                height: 1.7,
+                color: Colors.white,
+                // color: Colors.black87,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+/* ================= SECTION 1 — DARK ================= */
 
 class _IntroSection extends StatelessWidget {
   const _IntroSection();
@@ -421,36 +535,32 @@ class _IntroSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 110),
-      decoration: const BoxDecoration(
-        gradient: LinearGradient(
-          colors: [
-            Color(0xFFF4F6F8),
-            Color(0xFFF1E6D6),
-          ],
-        ),
-      ),
+      padding: const EdgeInsets.symmetric(vertical: 110),
+      color: const Color(0xFF162836).withOpacity(0.65), // 🔥 HOME STYLE DARK
       child: const Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Text(
-            'Partnerships',
+            'Partner With UWO',
+            textAlign: TextAlign.center,
             style: TextStyle(
-              fontSize: 38,
+              fontSize: 32,
               fontWeight: FontWeight.bold,
+              color: Colors.white,
             ),
           ),
-          SizedBox(height: 24),
+          SizedBox(height: 26),
           SizedBox(
-            width: 900,
+            width: 850,
             child: Text(
-              'UWO collaborates with organizations, innovators, and technology '
-                  'leaders to build intelligent platforms and scalable digital '
-                  'ecosystems through long-term strategic partnerships.',
+              'We collaborate with organizations that share our vision of '
+                  'building intelligent, scalable systems designed for long-term impact.',
+              textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 18,
-                height: 1.6,
-                color: AppTheme.textMuted,
+                height: 1.7,
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
               ),
             ),
           ),
@@ -460,38 +570,43 @@ class _IntroSection extends StatelessWidget {
   }
 }
 
-/* ================= WHY PARTNER ================= */
+/* ================= SECTION 2 — LIGHT ================= */
 
-class _WhyPartnerSection extends StatelessWidget {
-  const _WhyPartnerSection();
+class _WhoCanPartnerSection extends StatelessWidget {
+  const _WhoCanPartnerSection();
 
   @override
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 90),
-      color: Colors.white,
+      padding: const EdgeInsets.symmetric(vertical: 110),
+      color: const Color(0xFF3A5F78).withOpacity(0.45), // 🔆 HOME STYLE LIGHT
       child: const Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Text(
-            'Why Partner With UWO',
+            'Who Can Partner',
+            textAlign: TextAlign.center,
             style: TextStyle(
               fontSize: 32,
               fontWeight: FontWeight.bold,
+              color: Colors.white,
             ),
           ),
-          SizedBox(height: 24),
+          SizedBox(height: 30),
           SizedBox(
-            width: 900,
+            width: 700,
             child: Text(
-              'We believe strong partnerships are built on trust, shared vision, '
-                  'and engineering excellence. Our approach focuses on creating '
-                  'mutual value through collaboration and long-term thinking.',
+              '• Technology companies\n'
+                  '• AI startups\n'
+                  '• Research institutions\n'
+                  '• Enterprise partners',
+              textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 18,
-                height: 1.6,
-                color: AppTheme.textMuted,
+                height: 2.0,
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
               ),
             ),
           ),
@@ -501,76 +616,42 @@ class _WhyPartnerSection extends StatelessWidget {
   }
 }
 
-/* ================= MODELS ================= */
+/* ================= SECTION 3 — DARK ================= */
 
-class _PartnershipModelsSection extends StatelessWidget {
-  const _PartnershipModelsSection();
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 90),
-      color: const Color(0xFFEFF6FA),
-      child: const Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            'Partnership Models',
-            style: TextStyle(
-              fontSize: 32,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          SizedBox(height: 24),
-          Text(
-            '• Technology and platform partnerships\n'
-                '• Research and innovation collaboration\n'
-                '• Enterprise integration alliances\n'
-                '• Long-term strategic engagements',
-            style: TextStyle(
-              fontSize: 18,
-              height: 1.8,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-/* ================= CTA ================= */
-
-class _CallToActionSection extends StatelessWidget {
-  const _CallToActionSection();
+class _ValueForPartnersSection extends StatelessWidget {
+  const _ValueForPartnersSection();
 
   @override
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 90),
-      color: Colors.white,
+      padding: const EdgeInsets.symmetric(vertical: 110),
+      color: const Color(0xFF162836).withOpacity(0.65), // 🔥 SAME AS SECTION 1
       child: const Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Text(
-            'Let’s Collaborate',
+            'Value for Partners',
+            textAlign: TextAlign.center,
             style: TextStyle(
               fontSize: 32,
               fontWeight: FontWeight.bold,
+              color: Colors.white,
             ),
           ),
-          SizedBox(height: 24),
+          SizedBox(height: 30),
           SizedBox(
-            width: 900,
+            width: 700,
             child: Text(
-              'If you are interested in partnering with UWO, we would love '
-                  'to explore how we can collaborate to build intelligent and '
-                  'future-ready digital solutions together.',
+              '• Platform access\n'
+                  '• Joint innovation opportunities\n'
+                  '• Global exposure & scalability',
+              textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 18,
-                height: 1.6,
-                color: AppTheme.textMuted,
+                height: 2.0,
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
               ),
             ),
           ),

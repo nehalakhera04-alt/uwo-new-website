@@ -1,80 +1,25 @@
-// // // import 'package:flutter/material.dart';
-// // // import '../widgets/uwo_navbar.dart';
-// // // import '../widgets/uwo_footer.dart';
-// // // import '../widgets/uwo_section.dart';
-// // // import '../theme/app_theme.dart';
-// // //
-// // // class PlatformsPage extends StatelessWidget {
-// // //   const PlatformsPage({super.key});
-// // //
-// // //   @override
-// // //   Widget build(BuildContext context) {
-// // //     return Scaffold(
-// // //       appBar:UWONavbar(),
-// // //       body: SingleChildScrollView(
-// // //         child: Column(
-// // //           children: [
-// // //             UWOSection(
-// // //               title: 'Our Platforms',
-// // //               background: AppTheme.sectionBlue,
-// // //               content: Text(
-// // //                 'Enterprise-Grade AI Infrastructure Built For Scale',
-// // //                 style: Theme.of(context).textTheme.bodyLarge,
-// // //               ),
-// // //             ),
-// // //             UWOSection(
-// // //               title: 'AI Mall™',
-// // //               background: AppTheme.background,
-// // //               isGolden: true,
-// // //               content: Column(
-// // //                 crossAxisAlignment: CrossAxisAlignment.start,
-// // //                 children: const [
-// // //                   Text('• Multi-Agent Architecture'),
-// // //                   Text('• Subscription & Usage-Based Model'),
-// // //                   Text('• Vendor Onboarding Framework'),
-// // //                   Text('• API-Driven Ecosystem'),
-// // //                 ],
-// // //               ),
-// // //             ),
-// // //             UWOSection(
-// // //               title: 'EFV™',
-// // //               background: AppTheme.softBlue,
-// // //               content: Column(
-// // //                 crossAxisAlignment: CrossAxisAlignment.start,
-// // //                 children: const [
-// // //                   Text('• Cognitive State Modelling'),
-// // //                   Text('• Frequency-Based Intelligence'),
-// // //                   Text('• AI-Human Resonance'),
-// // //                 ],
-// // //               ),
-// // //             ),
-// // //             const UWOFooter(),
-// // //           ],
-// // //         ),
-// // //       ),
-// // //     );
-// // //   }
-// // // }
 // // import 'package:flutter/material.dart';
 // // import '../widgets/uwo_navbar.dart';
 // // import '../widgets/uwo_footer.dart';
 // // import '../theme/app_theme.dart';
+// // import '../widgets/mobile_drawer.dart';
 // //
-// // class OurProjectsPage extends StatelessWidget {
-// //   const OurProjectsPage({super.key});
+// // class PlatformsPage extends StatelessWidget {
+// //   const PlatformsPage({super.key});
 // //
 // //   @override
 // //   Widget build(BuildContext context) {
 // //     return Scaffold(
 // //       appBar: UWONavbar(),
-// //       endDrawer: const Drawer(),
+// //       endDrawer: MediaQuery.of(context).size.width < 768
+// //           ? UWOMobileDrawer()
+// //           : null,
 // //       body: SingleChildScrollView(
 // //         child: Column(
-// //           crossAxisAlignment: CrossAxisAlignment.start,
 // //           children: const [
-// //             _ProjectsIntroSection(),
-// //             _PlatformsSection(),
-// //             _ResearchSection(),
+// //             _IntroSection(),
+// //             _AIMallSection(),
+// //             _EFVSection(),
 // //             UWOFooter(),
 // //           ],
 // //         ),
@@ -83,58 +28,16 @@
 // //   }
 // // }
 // //
-// // /* =========================================================
-// //    1️⃣ INTRO — OUR PROJECTS
-// // ========================================================= */
-// // class _ProjectsIntroSection extends StatelessWidget {
-// //   const _ProjectsIntroSection();
+// // /* ================= INTRO ================= */
+// //
+// // class _IntroSection extends StatelessWidget {
+// //   const _IntroSection();
 // //
 // //   @override
 // //   Widget build(BuildContext context) {
 // //     return Container(
 // //       width: double.infinity,
-// //       padding: const EdgeInsets.symmetric(vertical: 100, horizontal: 80),
-// //       color: Color(0xFFEFF6FA),
-// //       child: Column(
-// //         crossAxisAlignment: CrossAxisAlignment.start,
-// //         children: const [
-// //           Text(
-// //             'Our Projects',
-// //             style: TextStyle(
-// //               fontSize: 36,
-// //               fontWeight: FontWeight.bold,
-// //             ),
-// //           ),
-// //           SizedBox(height: 24),
-// //           SizedBox(
-// //             width: 900,
-// //             child: Text(
-// //               'UWO builds focused, high-impact technology platforms designed to solve complex problems at scale. '
-// //                   'Our projects combine applied research, intelligent systems, and robust engineering to deliver '
-// //                   'real-world value across industries.',
-// //               style: TextStyle(
-// //                 fontSize: 18,
-// //                 color: AppTheme.textMuted,
-// //               ),
-// //             ),
-// //           ),
-// //         ],
-// //       ),
-// //     );
-// //   }
-// // }
-// //
-// // /* =========================================================
-// //    2️⃣ CORE PLATFORMS
-// // ========================================================= */
-// // class _PlatformsSection extends StatelessWidget {
-// //   const _PlatformsSection();
-// //
-// //   @override
-// //   Widget build(BuildContext context) {
-// //     return Container(
-// //       width: double.infinity,
-// //       padding: const EdgeInsets.symmetric(vertical: 100, horizontal: 80),
+// //       padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 120),
 // //       decoration: const BoxDecoration(
 // //         gradient: LinearGradient(
 // //           colors: [
@@ -144,58 +47,27 @@
 // //         ),
 // //       ),
 // //       child: Column(
-// //         crossAxisAlignment: CrossAxisAlignment.start,
+// //         crossAxisAlignment: CrossAxisAlignment.center,
 // //         children: const [
 // //           Text(
-// //             'Core Platforms',
+// //             'Our Platforms',
+// //             textAlign: TextAlign.center,
 // //             style: TextStyle(
-// //               fontSize: 36,
+// //               fontSize: 40,
 // //               fontWeight: FontWeight.bold,
 // //             ),
 // //           ),
-// //           SizedBox(height: 40),
-// //
-// //           // AI Mall
-// //           Text(
-// //             'AI Mall™',
-// //             style: TextStyle(
-// //               fontSize: 24,
-// //               fontWeight: FontWeight.w600,
-// //             ),
-// //           ),
-// //           SizedBox(height: 12),
+// //           SizedBox(height: 28),
 // //           SizedBox(
 // //             width: 900,
 // //             child: Text(
-// //               'AI Mall™ is a next-generation AI platform designed to enable modular, scalable, and enterprise-ready '
-// //                   'AI solutions. It serves as a unified ecosystem where intelligent services, tools, and applications '
-// //                   'can be developed, deployed, and integrated seamlessly.',
+// //               'UWO builds independent yet interconnected platforms — each designed '
+// //                   'as a scalable ecosystem while remaining interoperable within a '
+// //                   'broader intelligence network.',
+// //               textAlign: TextAlign.center,
 // //               style: TextStyle(
-// //                 fontSize: 16,
-// //                 color: AppTheme.textMuted,
-// //               ),
-// //             ),
-// //           ),
-// //
-// //           SizedBox(height: 40),
-// //
-// //           // EFV
-// //           Text(
-// //             'EFV™ Framework',
-// //             style: TextStyle(
-// //               fontSize: 24,
-// //               fontWeight: FontWeight.w600,
-// //             ),
-// //           ),
-// //           SizedBox(height: 12),
-// //           SizedBox(
-// //             width: 900,
-// //             child: Text(
-// //               'EFV™ is an engineering and intelligence framework focused on building decision-centric systems. '
-// //                   'It provides structured layers for automation, intelligence, and adaptability, enabling the '
-// //                   'creation of systems that respond dynamically to real-world inputs.',
-// //               style: TextStyle(
-// //                 fontSize: 16,
+// //                 fontSize: 18,
+// //                 height: 1.7,
 // //                 color: AppTheme.textMuted,
 // //               ),
 // //             ),
@@ -206,40 +78,83 @@
 // //   }
 // // }
 // //
-// // /* =========================================================
-// //    3️⃣ RESEARCH & INCUBATION
-// // ========================================================= */
-// // class _ResearchSection extends StatelessWidget {
-// //   const _ResearchSection();
+// // /* ================= AI MALL ================= */
+// //
+// // class _AIMallSection extends StatelessWidget {
+// //   const _AIMallSection();
 // //
 // //   @override
 // //   Widget build(BuildContext context) {
 // //     return Container(
 // //       width: double.infinity,
-// //       padding: const EdgeInsets.symmetric(vertical: 100, horizontal: 80),
-// //       color: Color(0xFFEFF6FA),
+// //       padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 100),
+// //       color: Colors.white,
 // //       child: Column(
-// //         crossAxisAlignment: CrossAxisAlignment.start,
+// //         crossAxisAlignment: CrossAxisAlignment.center,
 // //         children: const [
 // //           Text(
-// //             'Research & Innovation',
+// //             'AI Mall™',
+// //             textAlign: TextAlign.center,
 // //             style: TextStyle(
-// //               fontSize: 36,
+// //               fontSize: 34,
 // //               fontWeight: FontWeight.bold,
 // //             ),
 // //           ),
-// //           SizedBox(height: 24),
+// //           SizedBox(height: 16),
+// //           Text(
+// //             'Unified AI Distribution Platform',
+// //             style: TextStyle(
+// //               fontSize: 18,
+// //               fontWeight: FontWeight.w600,
+// //             ),
+// //           ),
+// //           SizedBox(height: 26),
 // //           SizedBox(
 // //             width: 900,
 // //             child: Text(
-// //               'Beyond platforms, UWO actively invests in research-driven incubation. We explore emerging technologies, '
-// //                   'new system architectures, and applied intelligence models that can shape future digital ecosystems. '
-// //                   'Our research efforts are tightly coupled with engineering execution, ensuring ideas translate into '
-// //                   'practical, scalable solutions.',
+// //               'AI Mall™ is a unified platform for deploying, accessing, and monetizing '
+// //                   'AI agents globally. It enables organizations to onboard vendors, '
+// //                   'manage subscriptions, and integrate AI capabilities through a '
+// //                   'structured marketplace.',
+// //               textAlign: TextAlign.center,
 // //               style: TextStyle(
 // //                 fontSize: 18,
+// //                 height: 1.7,
 // //                 color: AppTheme.textMuted,
 // //               ),
+// //             ),
+// //           ),
+// //           SizedBox(height: 40),
+// //           Align(
+// //             alignment: Alignment.centerLeft,
+// //             child: Text(
+// //               'Key Highlights',
+// //               style: TextStyle(
+// //                 fontSize: 20,
+// //                 fontWeight: FontWeight.bold,
+// //               ),
+// //             ),
+// //           ),
+// //           SizedBox(height: 16),
+// //           Align(
+// //             alignment: Alignment.centerLeft,
+// //             child: Text(
+// //               '• Multi-agent architecture\n'
+// //                   '• Subscription & usage-based models\n'
+// //                   '• Vendor onboarding infrastructure\n'
+// //                   '• API-driven ecosystem',
+// //               style: TextStyle(
+// //                 fontSize: 18,
+// //                 height: 1.8,
+// //               ),
+// //             ),
+// //           ),
+// //           SizedBox(height: 30),
+// //           Text(
+// //             '[ Explore AI Mall ]',
+// //             style: TextStyle(
+// //               fontSize: 16,
+// //               fontWeight: FontWeight.w600,
 // //             ),
 // //           ),
 // //         ],
@@ -248,10 +163,95 @@
 // //   }
 // // }
 // //
+// // /* ================= EFV ================= */
+// //
+// // class _EFVSection extends StatelessWidget {
+// //   const _EFVSection();
+// //
+// //   @override
+// //   Widget build(BuildContext context) {
+// //     return Container(
+// //       width: double.infinity,
+// //       padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 100),
+// //       color: const Color(0xFFEFF6FA),
+// //       child: Column(
+// //         crossAxisAlignment: CrossAxisAlignment.center,
+// //         children: const [
+// //           Text(
+// //             'EFV™',
+// //             textAlign: TextAlign.center,
+// //             style: TextStyle(
+// //               fontSize: 34,
+// //               fontWeight: FontWeight.bold,
+// //             ),
+// //           ),
+// //           SizedBox(height: 16),
+// //           Text(
+// //             'Human Intelligence × Frequency-Based Framework',
+// //             style: TextStyle(
+// //               fontSize: 18,
+// //               fontWeight: FontWeight.w600,
+// //             ),
+// //           ),
+// //           SizedBox(height: 26),
+// //           SizedBox(
+// //             width: 900,
+// //             child: Text(
+// //               'EFV™ is a research-driven intelligence framework focused on human '
+// //                   'cognition and frequency-based systems. It explores intelligence '
+// //                   'beyond algorithms — enabling resonance-based decision modeling '
+// //                   'and long-horizon research innovation.',
+// //               textAlign: TextAlign.center,
+// //               style: TextStyle(
+// //                 fontSize: 18,
+// //                 height: 1.7,
+// //                 color: AppTheme.textMuted,
+// //               ),
+// //             ),
+// //           ),
+// //           SizedBox(height: 40),
+// //           Align(
+// //             alignment: Alignment.centerLeft,
+// //             child: Text(
+// //               'Key Highlights',
+// //               style: TextStyle(
+// //                 fontSize: 20,
+// //                 fontWeight: FontWeight.bold,
+// //               ),
+// //             ),
+// //           ),
+// //           SizedBox(height: 16),
+// //           Align(
+// //             alignment: Alignment.centerLeft,
+// //             child: Text(
+// //               '• Cognitive state modeling\n'
+// //                   '• Frequency-based intelligence layers\n'
+// //                   '• AI-human resonance systems\n'
+// //                   '• Long-term research roadmap',
+// //               style: TextStyle(
+// //                 fontSize: 18,
+// //                 height: 1.8,
+// //               ),
+// //             ),
+// //           ),
+// //           SizedBox(height: 30),
+// //           Text(
+// //             '[ Explore EFV ]',
+// //             style: TextStyle(
+// //               fontSize: 16,
+// //               fontWeight: FontWeight.w600,
+// //             ),
+// //           ),
+// //         ],
+// //       ),
+// //     );
+// //   }
+// // }
 // import 'package:flutter/material.dart';
 // import '../widgets/uwo_navbar.dart';
 // import '../widgets/uwo_footer.dart';
 // import '../theme/app_theme.dart';
+// import '../widgets/mobile_drawer.dart';
 //
 // class PlatformsPage extends StatelessWidget {
 //   const PlatformsPage({super.key});
@@ -259,52 +259,78 @@
 //   @override
 //   Widget build(BuildContext context) {
 //     return Scaffold(
-//       appBar: const UWONavbar(),
-//       body: SingleChildScrollView(
-//         child: Column(
-//           children: const [
-//             _HeaderSection(),
-//             _AIMallPreview(),
-//             _EFVPreview(),
-//             UWOFooter(),
-//           ],
-//         ),
+//       appBar: UWONavbar(),
+//       endDrawer:
+//       MediaQuery.of(context).size.width < 768 ? UWOMobileDrawer() : null,
+//
+//       body: Stack(
+//         children: [
+//           /// 🔥 FULL BACKGROUND IMAGE (NAVBAR KE NEECHHE)
+//           Positioned.fill(
+//             child: Image.asset(
+//               'assets/images/platforms-bg.jpg', // 👈 apni image ka path
+//               fit: BoxFit.cover,
+//             ),
+//           ),
+//
+//           /// 🔹 PAGE CONTENT (UNCHANGED)
+//           SingleChildScrollView(
+//             child: Column(
+//               children: const [
+//                 _IntroSection(),
+//                 _AIMallSection(),
+//                 _EFVSection(),
+//                 SizedBox(height: 120),
+//                 UWOFooter(),
+//               ],
+//             ),
+//           ),
+//         ],
 //       ),
 //     );
 //   }
 // }
 //
-// /* ================= HEADER ================= */
+// /* ================= INTRO ================= */
 //
-// class _HeaderSection extends StatelessWidget {
-//   const _HeaderSection();
+// class _IntroSection extends StatelessWidget {
+//   const _IntroSection();
 //
 //   @override
 //   Widget build(BuildContext context) {
 //     return Container(
 //       width: double.infinity,
-//       padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 90),
+//       padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 120),
 //       decoration: const BoxDecoration(
 //         gradient: LinearGradient(
-//           colors: [Color(0xFFF4F6F8), Color(0xFFF1E6D6)],
+//           colors: [
+//             Color(0xFFF4F6F8),
+//             Color(0xFFF1E6D6),
+//           ],
 //         ),
 //       ),
-//       child: const Column(
-//         crossAxisAlignment: CrossAxisAlignment.start,
-//         children: [
+//       child: Column(
+//         crossAxisAlignment: CrossAxisAlignment.center,
+//         children: const [
 //           Text(
 //             'Our Platforms',
-//             style: TextStyle(fontSize: 36, fontWeight: FontWeight.bold),
+//             textAlign: TextAlign.center,
+//             style: TextStyle(
+//               fontSize: 40,
+//               fontWeight: FontWeight.bold,
+//             ),
 //           ),
-//           SizedBox(height: 20),
+//           SizedBox(height: 28),
 //           SizedBox(
 //             width: 900,
 //             child: Text(
-//               'UWO is building intelligent platforms that enable adaptive decision-making, '
-//                   'automation, and scalable digital ecosystems.',
+//               'UWO builds independent yet interconnected platforms — each designed '
+//                   'as a scalable ecosystem while remaining interoperable within a '
+//                   'broader intelligence network.',
+//               textAlign: TextAlign.center,
 //               style: TextStyle(
 //                 fontSize: 18,
-//                 height: 1.6,
+//                 height: 1.7,
 //                 color: AppTheme.textMuted,
 //               ),
 //             ),
@@ -317,45 +343,86 @@
 //
 // /* ================= AI MALL ================= */
 //
-// class _AIMallPreview extends StatelessWidget {
-//   const _AIMallPreview();
+// class _AIMallSection extends StatelessWidget {
+//   const _AIMallSection();
 //
 //   @override
 //   Widget build(BuildContext context) {
 //     return Container(
-//       padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 90),
-//       color: Colors.white,
-//       child: Row(
-//         children: [
-//           Expanded(
-//             flex: 6,
-//             child: Column(
-//               crossAxisAlignment: CrossAxisAlignment.start,
-//               children: const [
-//                 Text(
-//                   'AI Mall',
-//                   style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
-//                 ),
-//                 SizedBox(height: 20),
-//                 Text(
-//                   'AI Mall is a unified marketplace for intelligent solutions. '
-//                       'It enables discovery, deployment, and management of AI-powered '
-//                       'services across industries.',
-//                   style: TextStyle(
-//                     fontSize: 18,
-//                     height: 1.6,
-//                     color: AppTheme.textMuted,
-//                   ),
-//                 ),
-//               ],
+//       width: double.infinity,
+//       padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 100),
+//       color: const Color(0xFF162836).withOpacity(0.65), // 🔥 HOME DARK
+//       child: Column(
+//         crossAxisAlignment: CrossAxisAlignment.center,
+//         children: const [
+//           Text(
+//             'AI Mall™',
+//             textAlign: TextAlign.center,
+//             style: TextStyle(
+//               fontSize: 34,
+//               fontWeight: FontWeight.bold,
+//               color: Colors.white,
 //             ),
 //           ),
-//           const SizedBox(width: 48),
-//           Expanded(
-//             flex: 5,
-//             child: Image.asset(
-//               'assets/images/ai_mall_platform.png',
-//               fit: BoxFit.contain,
+//           SizedBox(height: 16),
+//           Text(
+//             'Unified AI Distribution Platform',
+//             style: TextStyle(
+//               fontSize: 18,
+//               fontWeight: FontWeight.w600,
+//               color: Colors.white,
+//             ),
+//           ),
+//           SizedBox(height: 26),
+//           SizedBox(
+//             width: 900,
+//             child: Text(
+//               'AI Mall™ is a unified platform for deploying, accessing, and monetizing '
+//                   'AI agents globally. It enables organizations to onboard vendors, '
+//                   'manage subscriptions, and integrate AI capabilities through a '
+//                   'structured marketplace.',
+//               textAlign: TextAlign.center,
+//               style: TextStyle(
+//                 fontSize: 18,
+//                 height: 1.7,
+//                 color: Colors.white,
+//               ),
+//             ),
+//           ),
+//           SizedBox(height: 40),
+//           Align(
+//             alignment: Alignment.centerLeft,
+//             child: Text(
+//               'Key Highlights',
+//               style: TextStyle(
+//                 fontSize: 20,
+//                 fontWeight: FontWeight.bold,
+//                 color: Colors.white,
+//               ),
+//             ),
+//           ),
+//           SizedBox(height: 16),
+//           Align(
+//             alignment: Alignment.centerLeft,
+//             child: Text(
+//               '• Multi-agent architecture\n'
+//                   '• Subscription & usage-based models\n'
+//                   '• Vendor onboarding infrastructure\n'
+//                   '• API-driven ecosystem',
+//               style: TextStyle(
+//                 fontSize: 18,
+//                 height: 1.8,
+//                 color: Colors.white,
+//               ),
+//             ),
+//           ),
+//           SizedBox(height: 30),
+//           Text(
+//             '[ Explore AI Mall ]',
+//             style: TextStyle(
+//               fontSize: 16,
+//               fontWeight: FontWeight.w600,
+//               color: Colors.white,
 //             ),
 //           ),
 //         ],
@@ -366,45 +433,86 @@
 //
 // /* ================= EFV ================= */
 //
-// class _EFVPreview extends StatelessWidget {
-//   const _EFVPreview();
+// class _EFVSection extends StatelessWidget {
+//   const _EFVSection();
 //
 //   @override
 //   Widget build(BuildContext context) {
 //     return Container(
-//       padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 90),
-//       color: const Color(0xFFEFF6FA),
-//       child: Row(
-//         children: [
-//           Expanded(
-//             flex: 5,
-//             child: Image.asset(
-//               'assets/images/efv_decision_flow.png',
-//               fit: BoxFit.contain,
+//       width: double.infinity,
+//       padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 100),
+//       color: const Color(0xFF3A5F78).withOpacity(0.45), // 🔆 HOME LIGHT
+//       child: Column(
+//         crossAxisAlignment: CrossAxisAlignment.center,
+//         children: const [
+//           Text(
+//             'EFV™',
+//             textAlign: TextAlign.center,
+//             style: TextStyle(
+//               fontSize: 34,
+//               fontWeight: FontWeight.bold,
+//               color: Colors.white,
 //             ),
 //           ),
-//           const SizedBox(width: 48),
-//           Expanded(
-//             flex: 6,
-//             child: Column(
-//               crossAxisAlignment: CrossAxisAlignment.start,
-//               children: const [
-//                 Text(
-//                   'EFV Platform',
-//                   style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
-//                 ),
-//                 SizedBox(height: 20),
-//                 Text(
-//                   'EFV focuses on intelligent evaluation, validation, and '
-//                       'decision-flow automation. It supports structured reasoning '
-//                       'and enterprise decision systems.',
-//                   style: TextStyle(
-//                     fontSize: 18,
-//                     height: 1.6,
-//                     color: AppTheme.textMuted,
-//                   ),
-//                 ),
-//               ],
+//           SizedBox(height: 16),
+//           Text(
+//             'Human Intelligence × Frequency-Based Framework',
+//             style: TextStyle(
+//               fontSize: 18,
+//               fontWeight: FontWeight.w600,
+//               color: Colors.white,
+//             ),
+//           ),
+//           SizedBox(height: 26),
+//           SizedBox(
+//             width: 900,
+//             child: Text(
+//               'EFV™ is a research-driven intelligence framework focused on human '
+//                   'cognition and frequency-based systems. It explores intelligence '
+//                   'beyond algorithms — enabling resonance-based decision modeling '
+//                   'and long-horizon research innovation.',
+//               textAlign: TextAlign.center,
+//               style: TextStyle(
+//                 fontSize: 18,
+//                 height: 1.7,
+//                 color: Colors.white,
+//               ),
+//             ),
+//           ),
+//           SizedBox(height: 40),
+//           Align(
+//             alignment: Alignment.centerLeft,
+//             child: Text(
+//               'Key Highlights',
+//               style: TextStyle(
+//                 fontSize: 20,
+//                 fontWeight: FontWeight.bold,
+//                 color: Colors.white,
+//               ),
+//             ),
+//           ),
+//           SizedBox(height: 16),
+//           Align(
+//             alignment: Alignment.centerLeft,
+//             child: Text(
+//               '• Cognitive state modeling\n'
+//                   '• Frequency-based intelligence layers\n'
+//                   '• AI-human resonance systems\n'
+//                   '• Long-term research roadmap',
+//               style: TextStyle(
+//                 fontSize: 18,
+//                 height: 1.8,
+//                 color: Colors.white,
+//               ),
+//             ),
+//           ),
+//           SizedBox(height: 30),
+//           Text(
+//             '[ Explore EFV ]',
+//             style: TextStyle(
+//               fontSize: 16,
+//               fontWeight: FontWeight.w600,
+//               color: Colors.white,
 //             ),
 //           ),
 //         ],
@@ -412,8 +520,8 @@
 //     );
 //   }
 // }
-//
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../widgets/uwo_navbar.dart';
 import '../widgets/uwo_footer.dart';
 import '../theme/app_theme.dart';
@@ -422,23 +530,43 @@ import '../widgets/mobile_drawer.dart';
 class PlatformsPage extends StatelessWidget {
   const PlatformsPage({super.key});
 
+  // 🔥 OPEN AI MALL WEBSITE (NEW TAB)
+  Future<void> _openAIMall() async {
+    const url = 'https://ai-mall.in';
+    await launchUrl(
+      Uri.parse(url),
+      webOnlyWindowName: '_blank',
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar:UWONavbar(),
-      endDrawer: MediaQuery.of(context).size.width < 768
-          ? UWOMobileDrawer()
-          : null,
+      appBar: UWONavbar(),
+      endDrawer:
+      MediaQuery.of(context).size.width < 768 ? UWOMobileDrawer() : null,
 
-      body: SingleChildScrollView(
-        child: Column(
-          children: const [
-            _IntroSection(),
-            _AIMallSection(),
-            _EFVSection(),
-            UWOFooter(),
-          ],
-        ),
+      body: Stack(
+        children: [
+          Positioned.fill(
+            child: Image.asset(
+              'assets/images/platforms-bg.jpg',
+              fit: BoxFit.cover,
+            ),
+          ),
+
+          SingleChildScrollView(
+            child: Column(
+              children: [
+                const _IntroSection(),
+                _AIMallSection(onTap: _openAIMall),
+                const _EFVSection(),
+                const SizedBox(height: 120),
+                const UWOFooter(),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }
@@ -453,36 +581,41 @@ class _IntroSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 110),
-      decoration: const BoxDecoration(
-        gradient: LinearGradient(
-          colors: [
-            Color(0xFFF4F6F8),
-            Color(0xFFF1E6D6),
-          ],
-        ),
-      ),
-      child: const Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
+      padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 120),
+      // decoration: const BoxDecoration(
+      //   gradient: LinearGradient(
+      //     colors: [
+      //       Color(0xFFF4F6F8),
+      //       Color(0xFFF1E6D6),
+      //     ],
+      //   ),
+      // ),
+      color: const Color(0xFF162836).withOpacity(0.65),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: const [
           Text(
             'Our Platforms',
+            textAlign: TextAlign.center,
             style: TextStyle(
-              fontSize: 38,
+              fontSize: 40,
               fontWeight: FontWeight.bold,
+              color: Colors.white,
             ),
           ),
-          SizedBox(height: 24),
+          SizedBox(height: 28),
           SizedBox(
             width: 900,
             child: Text(
-              'UWO is building next-generation intelligent platforms designed '
-                  'to enable scalable digital ecosystems, structured decision-making, '
-                  'and enterprise-ready innovation.',
+              'UWO builds independent yet interconnected platforms — each designed '
+                  'as a scalable ecosystem while remaining interoperable within a '
+                  'broader intelligence network.',
+              textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 18,
-                height: 1.6,
-                color: AppTheme.textMuted,
+                color: Colors.white,
+                height: 1.7,
+                // color: AppTheme.textMuted,
               ),
             ),
           ),
@@ -495,35 +628,91 @@ class _IntroSection extends StatelessWidget {
 /* ================= AI MALL ================= */
 
 class _AIMallSection extends StatelessWidget {
-  const _AIMallSection();
+  final VoidCallback onTap;
+  const _AIMallSection({required this.onTap});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 90),
-      color: Colors.white,
-      child: const Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+      padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 100),
+      color: const Color(0xFF162836).withOpacity(0.65),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Text(
-            'AI Mall',
+          const Text(
+            'AI Mall™',
+            textAlign: TextAlign.center,
             style: TextStyle(
-              fontSize: 32,
+              fontSize: 34,
               fontWeight: FontWeight.bold,
+              color: Colors.white,
             ),
           ),
-          SizedBox(height: 24),
-          SizedBox(
+          const SizedBox(height: 16),
+          const Text(
+            'Unified AI Distribution Platform',
+            style: TextStyle(
+              fontSize: 18,
+              fontWeight: FontWeight.w600,
+              color: Colors.white,
+            ),
+          ),
+          const SizedBox(height: 26),
+          const SizedBox(
             width: 900,
             child: Text(
-              'AI Mall is a unified marketplace for intelligent solutions. '
-                  'It enables organizations to discover, integrate, and manage '
-                  'AI-powered services through a centralized and scalable platform.',
+              'AI Mall™ is a unified platform for deploying, accessing, and monetizing '
+                  'AI agents globally. It enables organizations to onboard vendors, '
+                  'manage subscriptions, and integrate AI capabilities through a '
+                  'structured marketplace.',
+              textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 18,
-                height: 1.6,
-                color: AppTheme.textMuted,
+                height: 1.7,
+                color: Colors.white,
+              ),
+            ),
+          ),
+          const SizedBox(height: 40),
+          const Align(
+            alignment: Alignment.center,
+            child: Text(
+              'Key Highlights',
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+              ),
+            ),
+          ),
+          const SizedBox(height: 16),
+          const Align(
+            alignment: Alignment.center,
+            child: Text(
+              '• Multi-agent architecture\n'
+                  '• Subscription & usage-based models\n'
+                  '• Vendor onboarding infrastructure\n'
+                  '• API-driven ecosystem',
+              style: TextStyle(
+                fontSize: 18,
+                height: 1.8,
+                color: Colors.white,
+              ),
+            ),
+          ),
+          const SizedBox(height: 30),
+
+          /// 🔥 CLICKABLE CTA (NO STYLE CHANGE)
+          InkWell(
+            onTap: onTap,
+            child: const Text(
+              '[ Explore AI Mall ]',
+              style: TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.w600,
+                color: Colors.white,
+                decoration: TextDecoration.underline,
               ),
             ),
           ),
@@ -542,29 +731,42 @@ class _EFVSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 90),
-      color: const Color(0xFFEFF6FA),
-      child: const Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
+      padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 100),
+      color: const Color(0xFF3A5F78).withOpacity(0.45),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: const [
           Text(
-            'EFV Platform',
+            'EFV™',
+            textAlign: TextAlign.center,
             style: TextStyle(
-              fontSize: 32,
+              fontSize: 34,
               fontWeight: FontWeight.bold,
+              color: Colors.white,
             ),
           ),
-          SizedBox(height: 24),
+          SizedBox(height: 16),
+          Text(
+            'Human Intelligence × Frequency-Based Framework',
+            style: TextStyle(
+              fontSize: 18,
+              fontWeight: FontWeight.w600,
+              color: Colors.white,
+            ),
+          ),
+          SizedBox(height: 26),
           SizedBox(
             width: 900,
             child: Text(
-              'EFV focuses on evaluation, validation, and structured decision '
-                  'flows. It supports intelligent automation and enterprise systems '
-                  'where accuracy, transparency, and control are critical.',
+              'EFV™ is a research-driven intelligence framework focused on human '
+                  'cognition and frequency-based systems. It explores intelligence '
+                  'beyond algorithms — enabling resonance-based decision modeling '
+                  'and long-horizon research innovation.',
+              textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 18,
-                height: 1.6,
-                color: AppTheme.textMuted,
+                height: 1.7,
+                color: Colors.white,
               ),
             ),
           ),

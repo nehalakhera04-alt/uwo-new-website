@@ -23,7 +23,7 @@ class UWOMobileDrawer extends StatelessWidget {
         children: [
           Center(
             child: Image.asset(
-              'assets/logo.png',
+              'assets/images/logo.png',
               height: 70,
               fit: BoxFit.contain,
             ),

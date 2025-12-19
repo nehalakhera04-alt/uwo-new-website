@@ -4,9 +4,14 @@ class AppTheme {
   // 🔵 LOGO-BASED BRAND COLORS
   static const Color darkBlue = Color(0xFF1E3647);
   static const Color lightBlue = Color(0xFF2F81B5);
+
+  // 🟡 GOLD COLOR (MAIN ACTION COLOR)
   static const Color golden = Color(0xFFD6A559);
 
-  // ⚪ BACKGROUND COLORS (IMPORTANT – missing before)
+  // ✅ FIX: alias for primaryGold (ERROR SOLVED)
+  static const Color primaryGold = golden;
+
+  // ⚪ BACKGROUND COLORS
   static const Color background = Color(0xFFF6F8FC);   // page background
   static const Color sectionBlue = Color(0xFFE9F2F8);  // hero / section bg
   static const Color softBlue = Color(0xFFE9F2F8);     // alias (safe)
@@ -32,7 +37,7 @@ class AppTheme {
       ),
     ),
 
-    // 🔹 TEXT
+    // 🔹 TEXT THEME
     textTheme: const TextTheme(
       headlineLarge: TextStyle(
         fontSize: 44,
@@ -59,7 +64,7 @@ class AppTheme {
     // 🔹 BUTTONS
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
-        backgroundColor: golden,
+        backgroundColor: primaryGold, // ✅ safe to use now
         foregroundColor: Colors.white,
         padding: const EdgeInsets.symmetric(
           horizontal: 28,
@@ -71,8 +76,10 @@ class AppTheme {
       ),
     ),
 
-    // 🔹 INPUTS
+    // 🔹 INPUT FIELDS
     inputDecorationTheme: InputDecorationTheme(
+      filled: true,
+      fillColor: Colors.white,
       border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(10),
       ),
