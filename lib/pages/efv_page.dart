@@ -1,7 +1,201 @@
+// // import 'package:flutter/material.dart';
+// // import '../widgets/uwo_navbar.dart';
+// // import '../widgets/uwo_footer.dart';
+// // import '../theme/app_theme.dart';
+// // import '../widgets/mobile_drawer.dart';
+// //
+// // class EFVPage extends StatelessWidget {
+// //   const EFVPage({super.key});
+// //
+// //   @override
+// //   Widget build(BuildContext context) {
+// //     return Scaffold(
+// //       appBar: UWONavbar(),
+// //       endDrawer: MediaQuery.of(context).size.width < 768
+// //           ? UWOMobileDrawer()
+// //           : null,
+// //       body: SingleChildScrollView(
+// //         child: Column(
+// //           children: const [
+// //             _HeroSection(),
+// //             _FrameworkOverviewSection(),
+// //             _ApplicationDomainsSection(),
+// //             _CTASection(),
+// //             UWOFooter(),
+// //           ],
+// //         ),
+// //       ),
+// //     );
+// //   }
+// // }
+// //
+// // /* ================= HERO ================= */
+// //
+// // class _HeroSection extends StatelessWidget {
+// //   const _HeroSection();
+// //
+// //   @override
+// //   Widget build(BuildContext context) {
+// //     return Container(
+// //       width: double.infinity,
+// //       padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 120),
+// //       decoration: const BoxDecoration(
+// //         gradient: LinearGradient(
+// //           colors: [
+// //             Color(0xFFF4F6F8),
+// //             Color(0xFFF1E6D6),
+// //           ],
+// //         ),
+// //       ),
+// //       child: Column(
+// //         crossAxisAlignment: CrossAxisAlignment.center,
+// //         children: const [
+// //           Text(
+// //             'EFV™',
+// //             textAlign: TextAlign.center,
+// //             style: TextStyle(
+// //               fontSize: 42,
+// //               fontWeight: FontWeight.bold,
+// //             ),
+// //           ),
+// //           SizedBox(height: 18),
+// //           Text(
+// //             'Intelligence Beyond Algorithms',
+// //             textAlign: TextAlign.center,
+// //             style: TextStyle(
+// //               fontSize: 20,
+// //               fontWeight: FontWeight.w600,
+// //             ),
+// //           ),
+// //         ],
+// //       ),
+// //     );
+// //   }
+// // }
+// //
+// // /* ================= FRAMEWORK OVERVIEW ================= */
+// //
+// // class _FrameworkOverviewSection extends StatelessWidget {
+// //   const _FrameworkOverviewSection();
+// //
+// //   @override
+// //   Widget build(BuildContext context) {
+// //     return Container(
+// //       width: double.infinity,
+// //       padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 100),
+// //       color: Colors.white,
+// //       child: Column(
+// //         crossAxisAlignment: CrossAxisAlignment.center,
+// //         children: const [
+// //           Text(
+// //             'Framework Overview',
+// //             textAlign: TextAlign.center,
+// //             style: TextStyle(
+// //               fontSize: 34,
+// //               fontWeight: FontWeight.bold,
+// //             ),
+// //           ),
+// //           SizedBox(height: 30),
+// //           SizedBox(
+// //             width: 900,
+// //             child: Text(
+// //               'EFV is a proprietary intelligence framework combining neuroscience, '
+// //                   'frequency systems, and AI intelligence to model, understand, and '
+// //                   'enhance human cognitive states.',
+// //               textAlign: TextAlign.center,
+// //               style: TextStyle(
+// //                 fontSize: 18,
+// //                 height: 1.7,
+// //                 color: AppTheme.textMuted,
+// //               ),
+// //             ),
+// //           ),
+// //         ],
+// //       ),
+// //     );
+// //   }
+// // }
+// //
+// // /* ================= APPLICATION DOMAINS ================= */
+// //
+// // class _ApplicationDomainsSection extends StatelessWidget {
+// //   const _ApplicationDomainsSection();
+// //
+// //   @override
+// //   Widget build(BuildContext context) {
+// //     return Container(
+// //       width: double.infinity,
+// //       padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 100),
+// //       color: const Color(0xFFEFF6FA),
+// //       child: Column(
+// //         crossAxisAlignment: CrossAxisAlignment.center,
+// //         children: const [
+// //           Text(
+// //             'Application Domains',
+// //             textAlign: TextAlign.center,
+// //             style: TextStyle(
+// //               fontSize: 34,
+// //               fontWeight: FontWeight.bold,
+// //             ),
+// //           ),
+// //           SizedBox(height: 32),
+// //           Align(
+// //             alignment: Alignment.centerLeft,
+// //             child: Text(
+// //               '• Focus & clarity systems\n'
+// //                   '• Human performance optimization\n'
+// //                   '• Frequency-based AI interfaces\n'
+// //                   '• Cognitive alignment tools',
+// //               style: TextStyle(
+// //                 fontSize: 18,
+// //                 height: 1.9,
+// //               ),
+// //             ),
+// //           ),
+// //         ],
+// //       ),
+// //     );
+// //   }
+// // }
+// //
+// // /* ================= CTA ================= */
+// //
+// // class _CTASection extends StatelessWidget {
+// //   const _CTASection();
+// //
+// //   @override
+// //   Widget build(BuildContext context) {
+// //     return Container(
+// //       width: double.infinity,
+// //       padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 110),
+// //       color: Colors.white,
+// //       child: Column(
+// //         crossAxisAlignment: CrossAxisAlignment.center,
+// //         children: const [
+// //           Text(
+// //             'Discover the EFV Framework',
+// //             textAlign: TextAlign.center,
+// //             style: TextStyle(
+// //               fontSize: 32,
+// //               fontWeight: FontWeight.bold,
+// //             ),
+// //           ),
+// //           SizedBox(height: 20),
+// //           Text(
+// //             '[ Visit EFV Website ]',
+// //             style: TextStyle(
+// //               fontSize: 18,
+// //               fontWeight: FontWeight.w600,
+// //             ),
+// //           ),
+// //         ],
+// //       ),
+// //     );
+// //   }
+// // }
 // import 'package:flutter/material.dart';
 // import '../widgets/uwo_navbar.dart';
 // import '../widgets/uwo_footer.dart';
-// import '../theme/app_theme.dart';
 // import '../widgets/mobile_drawer.dart';
 //
 // class EFVPage extends StatelessWidget {
@@ -11,19 +205,33 @@
 //   Widget build(BuildContext context) {
 //     return Scaffold(
 //       appBar: UWONavbar(),
-//       endDrawer: MediaQuery.of(context).size.width < 768
-//           ? UWOMobileDrawer()
-//           : null,
-//       body: SingleChildScrollView(
-//         child: Column(
-//           children: const [
-//             _HeroSection(),
-//             _FrameworkOverviewSection(),
-//             _ApplicationDomainsSection(),
-//             _CTASection(),
-//             UWOFooter(),
-//           ],
-//         ),
+//       endDrawer:
+//       MediaQuery.of(context).size.width < 768 ? UWOMobileDrawer() : null,
+//
+//       body: Stack(
+//         children: [
+//           /// 🔥 FULL BACKGROUND IMAGE (NAVBAR KE NEECHHE)
+//           Positioned.fill(
+//             child: Image.asset(
+//               'assets/images/efv-bg.jpg',
+//               fit: BoxFit.cover,
+//             ),
+//           ),
+//
+//           /// 🔹 PAGE CONTENT (UNCHANGED)
+//           SingleChildScrollView(
+//             child: Column(
+//               children: const [
+//                 _HeroSection(),
+//                 _FrameworkOverviewSection(),
+//                 _ApplicationDomainsSection(),
+//                 _CTASection(),
+//                 SizedBox(height: 120),
+//                 UWOFooter(),
+//               ],
+//             ),
+//           ),
+//         ],
 //       ),
 //     );
 //   }
@@ -39,14 +247,15 @@
 //     return Container(
 //       width: double.infinity,
 //       padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 120),
-//       decoration: const BoxDecoration(
-//         gradient: LinearGradient(
-//           colors: [
-//             Color(0xFFF4F6F8),
-//             Color(0xFFF1E6D6),
-//           ],
-//         ),
-//       ),
+//       // decoration: const BoxDecoration(
+//       //   gradient: LinearGradient(
+//       //     colors: [
+//       //       Color(0xFFF4F6F8),
+//       //       Color(0xFFF1E6D6),
+//       //     ],
+//       //   ),
+//       // ),
+//       color: const Color(0xFF162836).withOpacity(0.65),
 //       child: Column(
 //         crossAxisAlignment: CrossAxisAlignment.center,
 //         children: const [
@@ -56,6 +265,7 @@
 //             style: TextStyle(
 //               fontSize: 42,
 //               fontWeight: FontWeight.bold,
+//               color: Colors.white,
 //             ),
 //           ),
 //           SizedBox(height: 18),
@@ -65,6 +275,7 @@
 //             style: TextStyle(
 //               fontSize: 20,
 //               fontWeight: FontWeight.w600,
+//               color: Colors.white,
 //             ),
 //           ),
 //         ],
@@ -83,7 +294,7 @@
 //     return Container(
 //       width: double.infinity,
 //       padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 100),
-//       color: Colors.white,
+//       color: const Color(0xFF162836).withOpacity(0.65), // 🔥 HOME DARK
 //       child: Column(
 //         crossAxisAlignment: CrossAxisAlignment.center,
 //         children: const [
@@ -93,6 +304,7 @@
 //             style: TextStyle(
 //               fontSize: 34,
 //               fontWeight: FontWeight.bold,
+//               color: Colors.white,
 //             ),
 //           ),
 //           SizedBox(height: 30),
@@ -106,7 +318,7 @@
 //               style: TextStyle(
 //                 fontSize: 18,
 //                 height: 1.7,
-//                 color: AppTheme.textMuted,
+//                 color: Colors.white,
 //               ),
 //             ),
 //           ),
@@ -126,7 +338,7 @@
 //     return Container(
 //       width: double.infinity,
 //       padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 100),
-//       color: const Color(0xFFEFF6FA),
+//       color: const Color(0xFF3A5F78).withOpacity(0.45), // 🔆 HOME LIGHT
 //       child: Column(
 //         crossAxisAlignment: CrossAxisAlignment.center,
 //         children: const [
@@ -136,11 +348,12 @@
 //             style: TextStyle(
 //               fontSize: 34,
 //               fontWeight: FontWeight.bold,
+//               color: Colors.white,
 //             ),
 //           ),
 //           SizedBox(height: 32),
 //           Align(
-//             alignment: Alignment.centerLeft,
+//             alignment: Alignment.center,
 //             child: Text(
 //               '• Focus & clarity systems\n'
 //                   '• Human performance optimization\n'
@@ -149,6 +362,7 @@
 //               style: TextStyle(
 //                 fontSize: 18,
 //                 height: 1.9,
+//                 color: Colors.white,
 //               ),
 //             ),
 //           ),
@@ -168,7 +382,7 @@
 //     return Container(
 //       width: double.infinity,
 //       padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 110),
-//       color: Colors.white,
+//       color: const Color(0xFF162836).withOpacity(0.65), // 🔥 HOME DARK
 //       child: Column(
 //         crossAxisAlignment: CrossAxisAlignment.center,
 //         children: const [
@@ -178,6 +392,7 @@
 //             style: TextStyle(
 //               fontSize: 32,
 //               fontWeight: FontWeight.bold,
+//               color: Colors.white,
 //             ),
 //           ),
 //           SizedBox(height: 20),
@@ -186,6 +401,7 @@
 //             style: TextStyle(
 //               fontSize: 18,
 //               fontWeight: FontWeight.w600,
+//               color: Colors.white,
 //             ),
 //           ),
 //         ],
@@ -193,6 +409,7 @@
 //     );
 //   }
 // }
+//
 import 'package:flutter/material.dart';
 import '../widgets/uwo_navbar.dart';
 import '../widgets/uwo_footer.dart';
@@ -208,30 +425,26 @@ class EFVPage extends StatelessWidget {
       endDrawer:
       MediaQuery.of(context).size.width < 768 ? UWOMobileDrawer() : null,
 
-      body: Stack(
-        children: [
-          /// 🔥 FULL BACKGROUND IMAGE (NAVBAR KE NEECHHE)
-          Positioned.fill(
-            child: Image.asset(
-              'assets/images/efv-bg.jpg',
+      /// ✅ MOBILE + DESKTOP SAFE BACKGROUND
+      body: SingleChildScrollView(
+        child: Container(
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage('assets/images/efv-bg.jpg'),
               fit: BoxFit.cover,
             ),
           ),
-
-          /// 🔹 PAGE CONTENT (UNCHANGED)
-          SingleChildScrollView(
-            child: Column(
-              children: const [
-                _HeroSection(),
-                _FrameworkOverviewSection(),
-                _ApplicationDomainsSection(),
-                _CTASection(),
-                SizedBox(height: 120),
-                UWOFooter(),
-              ],
-            ),
+          child: Column(
+            children: const [
+              _HeroSection(),
+              _FrameworkOverviewSection(),
+              _ApplicationDomainsSection(),
+              _CTASection(),
+              SizedBox(height: 120),
+              UWOFooter(),
+            ],
           ),
-        ],
+        ),
       ),
     );
   }
@@ -247,14 +460,6 @@ class _HeroSection extends StatelessWidget {
     return Container(
       width: double.infinity,
       padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 120),
-      // decoration: const BoxDecoration(
-      //   gradient: LinearGradient(
-      //     colors: [
-      //       Color(0xFFF4F6F8),
-      //       Color(0xFFF1E6D6),
-      //     ],
-      //   ),
-      // ),
       color: const Color(0xFF162836).withOpacity(0.65),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -294,7 +499,7 @@ class _FrameworkOverviewSection extends StatelessWidget {
     return Container(
       width: double.infinity,
       padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 100),
-      color: const Color(0xFF162836).withOpacity(0.65), // 🔥 HOME DARK
+      color: const Color(0xFF162836).withOpacity(0.65),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: const [
@@ -338,7 +543,7 @@ class _ApplicationDomainsSection extends StatelessWidget {
     return Container(
       width: double.infinity,
       padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 100),
-      color: const Color(0xFF3A5F78).withOpacity(0.45), // 🔆 HOME LIGHT
+      color: const Color(0xFF3A5F78).withOpacity(0.45),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: const [
@@ -382,7 +587,7 @@ class _CTASection extends StatelessWidget {
     return Container(
       width: double.infinity,
       padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 110),
-      color: const Color(0xFF162836).withOpacity(0.65), // 🔥 HOME DARK
+      color: const Color(0xFF162836).withOpacity(0.65),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: const [
@@ -409,4 +614,3 @@ class _CTASection extends StatelessWidget {
     );
   }
 }
-
