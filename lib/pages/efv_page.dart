@@ -13,36 +13,31 @@
 //       endDrawer:
 //       MediaQuery.of(context).size.width < 768 ? UWOMobileDrawer() : null,
 //
-//       /// ✅ MOBILE + DESKTOP PERFECT BACKGROUND
-//       body: LayoutBuilder(
-//         builder: (context, constraints) {
-//           return SingleChildScrollView(
-//             child: ConstrainedBox(
-//               constraints: BoxConstraints(
-//                 minHeight: constraints.maxHeight,
-//               ),
-//               child: Container(
-//                 width: double.infinity,
-//                 decoration: const BoxDecoration(
-//                   image: DecorationImage(
-//                     image: AssetImage('assets/images/efv-bg.jpg'),
-//                     fit: BoxFit.cover,
-//                   ),
-//                 ),
-//                 child: Column(
-//                   children: const [
-//                     _HeroSection(),
-//                     _FrameworkOverviewSection(),
-//                     _ApplicationDomainsSection(),
-//                     _CTASection(),
-//                     SizedBox(height: 120),
-//                     UWOFooter(),
-//                   ],
-//                 ),
-//               ),
+//       /// ✅ PERFECT BACKGROUND (MOBILE + DESKTOP)
+//       body: Stack(
+//         children: [
+//           /// 🔥 BACKGROUND IMAGE (ALWAYS VISIBLE)
+//           Positioned.fill(
+//             child: Image.asset(
+//               'assets/images/efv-bg.jpg',
+//               fit: BoxFit.cover,
 //             ),
-//           );
-//         },
+//           ),
+//
+//           /// 📜 PAGE CONTENT
+//           SingleChildScrollView(
+//             child: Column(
+//               children: const [
+//                 _HeroSection(),
+//                 _FrameworkOverviewSection(),
+//                 _ApplicationDomainsSection(),
+//                 _CTASection(),
+//                 SizedBox(height: 120),
+//                 UWOFooter(),
+//               ],
+//             ),
+//           ),
+//         ],
 //       ),
 //     );
 //   }
@@ -222,35 +217,54 @@ class EFVPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final bool isMobile = MediaQuery.of(context).size.width < 768;
+
     return Scaffold(
       appBar: UWONavbar(),
-      endDrawer:
-      MediaQuery.of(context).size.width < 768 ? UWOMobileDrawer() : null,
+      endDrawer: isMobile ? UWOMobileDrawer() : null,
+      body: isMobile ? _mobileBody() : _desktopBody(),
+    );
+  }
 
-      /// ✅ PERFECT BACKGROUND (MOBILE + DESKTOP)
-      body: Stack(
-        children: [
-          /// 🔥 BACKGROUND IMAGE (ALWAYS VISIBLE)
-          Positioned.fill(
-            child: Image.asset(
-              'assets/images/efv-bg.jpg',
-              fit: BoxFit.cover,
-            ),
-          ),
+  /* ================= DESKTOP BODY ================= */
 
-          /// 📜 PAGE CONTENT
-          SingleChildScrollView(
-            child: Column(
-              children: const [
-                _HeroSection(),
-                _FrameworkOverviewSection(),
-                _ApplicationDomainsSection(),
-                _CTASection(),
-                SizedBox(height: 120),
-                UWOFooter(),
-              ],
-            ),
+  Widget _desktopBody() {
+    return Stack(
+      children: [
+        Positioned.fill(
+          child: Image.asset(
+            'assets/images/efv-bg.jpg',
+            fit: BoxFit.cover,
           ),
+        ),
+        SingleChildScrollView(
+          child: Column(
+            children: const [
+              _HeroSection(),
+              _FrameworkOverviewSection(),
+              _ApplicationDomainsSection(),
+              _CTASection(),
+              SizedBox(height: 120),
+              UWOFooter(),
+            ],
+          ),
+        ),
+      ],
+    );
+  }
+
+  /* ================= MOBILE BODY ================= */
+
+  Widget _mobileBody() {
+    return SingleChildScrollView(
+      child: Column(
+        children: const [
+          _HeroSection(), // 🔥 mobile → bg only here
+          _FrameworkOverviewSection(),
+          _ApplicationDomainsSection(),
+          _CTASection(),
+          SizedBox(height: 120),
+          UWOFooter(),
         ],
       ),
     );
@@ -264,10 +278,20 @@ class _HeroSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final bool isMobile = MediaQuery.of(context).size.width < 768;
+
     return Container(
       width: double.infinity,
       padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 120),
-      color: const Color(0xFF162836).withOpacity(0.65),
+      decoration: BoxDecoration(
+        image: isMobile
+            ? const DecorationImage(
+          image: AssetImage('assets/images/efv-bg.jpg'),
+          fit: BoxFit.cover,
+        )
+            : null,
+        color: const Color(0xFF162836).withOpacity(0.65),
+      ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: const [
