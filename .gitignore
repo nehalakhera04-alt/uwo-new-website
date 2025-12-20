@@ -45,7 +45,7 @@ app.*.map.json
 /android/app/release
 
 # Flutter / Dart
-build/
+#build/
 .dart_tool/
 .flutter-plugins
 .flutter-plugins-dependencies
